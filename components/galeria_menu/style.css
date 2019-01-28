@@ -1,0 +1,46 @@
+.galeria_nav_menu {
+  color: white;
+  background-color: black;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 24px !important;
+  display: inline-block;
+}
+.galeria_nav_menu a {
+  text-decoration: none;
+  color: white;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.42, 2.04);
+  transition-delay: 0s;
+}
+.galeria_nav_menu a:hover {
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid #ec008c;
+}
+.galeria_nav_menu a:active, .galeria_nav_menu a:visited {
+  text-decoration: none;
+  color: white;
+}
+.galeria_nav_menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.galeria_nav_menu ul li span {
+  color: #ec008c;
+}
+
+.galeria_link_active {
+  border-bottom: 2px solid #ec008c;
+}
+
+.galeria_artista_titulo {
+  font-size: 40px;
+  margin: 10px;
+  padding: 10px;
+  text-align: end;
+}
+
+/*# sourceMappingURL=style.css.map */
