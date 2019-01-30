@@ -6,7 +6,7 @@
                     <b>Sobre</b>
                 </div>
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ornare consectetur nisi, et tempor turpis tincidunt semper. Sed euismod nisl in libero malesuada, rutrum mattis sapien porta. Nullam sollicitudin turpis eget ex condimentum, in cursus metus porttitor. Vestibulum et gravida felis, eu tincidunt sapien. Donec faucibus nec diam eget fringilla. Morbi eget pharetra nisi. Aenean tincidunt a tortor et vulputate. Quisque sollicitudin magna quis lacinia sodales. Praesent id lectus sollicitudin nunc volutpat consectetur. Curabitur rhoncus, nisl condimentum elementum venenatis, orci nisi tempor est, vitae egestas nunc erat eget risus.
+                Photoarts possui um conhecimento único na seleção e curadoria de imagens em alta qualidade que mostram o trabalho artístico de cada um de seus fotógrafos. Este serviço de excelência está voltado a resolver as necessidades do cliente desde a escolha até a colocação das obras de arte. Com um laboratório próprio a Photoarts produz impressões e acabamentos de alta qualidade usada pelas mais prestigiadas galerias e museus por um preço acessível.
                 </p>
             </div>
 
@@ -15,15 +15,16 @@
                     <b>Estilos</b>
                 </div>
                 <ul>
-                    <ul>
                         <li>Abstrato</li>
-                        <li>Arte moderna</li>
-                    </ul>
-
-                    <ul>
-                        <li>Retrato</li>
-                        <li>Barroco</li>
-                    </ul>
+                        <li>Natureza</li>
+                    
+                        <li>Arquitetura</li>
+                        <li>Paisagem</li>
+                 
+                        <li>Pessoas</li>
+                        <li>Cidades</li>
+                    
+                        <li>ilustração</li>
                 </ul>
             </div>
         <?php

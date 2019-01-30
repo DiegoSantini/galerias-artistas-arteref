@@ -15,6 +15,12 @@
   flex-wrap: nowrap;
   overflow-x: auto;
 }
+@media (max-width: 540px) {
+  .scrolling-wrapper-flexbox {
+    margin: 0px;
+    margin-bottom: 60px;
+  }
+}
 .scrolling-wrapper-flexbox .card {
   flex: 0 0 auto;
   margin-right: 3px;
@@ -72,6 +78,7 @@
 }
 
 .scroll_posts {
+  max-width: 100%;
   height: 220px;
   margin-bottom: 100px;
   margin-top: 75px;
@@ -110,11 +117,8 @@
   font-size: 1.1em;
 }
 
-@media (max-width: 540px) {
-  .scroll_posts {
-    margin: 0px;
-    margin-bottom: 60px;
-  }
+.scroll_post_container {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -19,16 +19,24 @@
 
             mail($to, $subject, $message, $headers);
 
-            echo 'enviando e-mail!';
-
             $db = new create_db_galeria_artista();
             $db->install();
             $db->insert($_POST['email'], $_POST['nome'], $_POST['mensagem']);
 
+            $page = get_page_by_title('contato-galeria');
+
+            //echo $page->ID;
+            echo $page->guid;
+            //echo esc_url( get_page_link( $page->ID ) );
+
+            header("Location: http://localhost/novo_arteref/index.php/galeria/contato-galeria/?form=true");
+            exit();
+
         }else{
             echo 'dados não são válidos para o envio!';
+            header("Location: http://localhost/novo_arteref/index.php/galeria/contato-galeria/?form=false");
+            exit();
         }
        
-
     }
 ?>

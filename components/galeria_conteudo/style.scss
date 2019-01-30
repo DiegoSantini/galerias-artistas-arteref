@@ -1,58 +1,28 @@
 .galeria_conteudo_titulo{
     border-bottom: solid 2px black;
     padding-bottom: 3px;
-    b{
-        color: white;
-        padding: 5px;
-        background-color: black;
-    }
 }
 .galeria_conteudo_estilos{
-    ul{
+   ul{
         list-style-type: none;
         margin: 0;
         padding: 0;
-        display: inline-flex;
         margin-top: 10px;
-    }
-
-    li{
-        width: 80px;
-        height: 80px;
-        cursor: pointer;
-        text-align: center;
-        border-radius: 50%;
-        line-height: 80px;
+   }
+   li{
+        border-radius: 12px;
+        margin-top: 6px;
+        padding: 6px;
         background-color: #ec008c;
+        cursor: pointer;
         color: white;
+        display: inline-block;
         transition: all 0.4s;
+   }
+   li:hover{
+    transform: scale(1.1);
     }
-
-    li:hover{
-        transform: scale(1.1);
-    }
-
-    li:nth-child(2){
-        width: 150px;
-        height: 150px;
-        line-height: 150px;
-        margin-top: 60px;
-        position: relative;
-        right: 15px;
-    }
-
-    li:nth-child(3){
-        width: 110px;
-        height: 110px;
-        line-height: 110px;
-    }
-
-    li:nth-child(4){
-        width: 150px;
-        height: 150px;
-        line-height: 150px;
-        margin-top: 60px;
-        position: relative;
-        right: 40px;
-    }
+}
+.galeria_artista_logo{
+    text-align: center;
 }

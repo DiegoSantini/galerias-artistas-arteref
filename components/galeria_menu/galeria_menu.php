@@ -1,6 +1,7 @@
 <?php
 function galeria_menu(){
 ?>
+
     <nav class="navbar navbar-expand-lg galeria_nav_menu">
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -9,7 +10,7 @@ function galeria_menu(){
                 </li>
                 <li><span>|</span></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="galeria/trabalhos-galeria">Trabalhos</a>
+                    <a class="nav-link" href="galeria/trabalhos-galeria">Obras</a>
                 </li>
                 <li><span>|</span></li>
                 <li class="nav-item">

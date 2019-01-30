@@ -3,20 +3,24 @@ $cor_principal_custom_content: rgb(0, 0, 0);
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    
     .card {
       display: inline-block;
     }
     .post_card_ver_mais{
-        display: inline-block;
-       }
-  }
-  
-  .scrolling-wrapper-flexbox {
+      display: inline-block;
+    }
+}
+.scrolling-wrapper-flexbox {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     
+
+    @media (max-width: 540px){
+        margin: 0px;
+        margin-bottom: 60px;
+    }
+
     .card {
       flex: 0 0 auto;
       margin-right: 3px;
@@ -76,6 +80,7 @@ $cor_principal_custom_content: rgb(0, 0, 0);
   }
 
 .scroll_posts{
+    max-width: 100%;
     height: 220px;
     margin-bottom: 100px;
     margin-top: 75px;
@@ -87,11 +92,9 @@ $cor_principal_custom_content: rgb(0, 0, 0);
         color: white;
         padding: 5px;
     }
-
     .scroll_prev{
         float: left;
     }
-
     .scroll_next{
         float: right;
     }
@@ -115,9 +118,6 @@ $cor_principal_custom_content: rgb(0, 0, 0);
 .arteref_scroll_active{
     font-size: 1.1em;
 }
-@media (max-width: 540px){
-    .scroll_posts{
-        margin: 0px;
-        margin-bottom: 60px;
-    }
+.scroll_post_container{
+    max-width: 100%;
 }

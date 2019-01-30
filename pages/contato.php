@@ -13,7 +13,7 @@
             <?php form_contato(); ?>
         </div>
         <div class="col-lg-6">
-            <?php google_maps(); ?>
+            <!-- <?php //google_maps(); ?> -->
         </div>
     </div>
 </div>

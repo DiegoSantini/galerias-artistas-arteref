@@ -1,5 +1,17 @@
 <?php 
     function form_contato(){
+
+        if (isset( $_GET['form'])) {
+
+            if ($_GET['form'] == 'true') {
+                print '<div class="alert alert-success">Sua mensagem foi enviada com sucesso!</div>';
+            }
+            if ($_GET['form'] == 'false') {
+                print '<div class="alert alert-danger">Algo deu errado por favor tente novamente!</div>';
+            }
+
+        }
+
         ?>
 
         <form action="form.php" method="post">
