@@ -10,6 +10,8 @@
         </div>
     </div>
 
+    <?php galeria_logo(); ?>
+
     <div class="row">
         <?php galeria_trabalhos(); ?>
     </div>

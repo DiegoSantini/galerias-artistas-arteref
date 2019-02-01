@@ -12,11 +12,9 @@
                <span></span>
             </div>
         </div>
-        <hr>
-        <div class="col-lg-12 galeria_artista_logo">
-            <img src="https://arteref.com/wp-content/uploads/2019/01/Logo-Photoarts-cracha-low-for-site.png" alt="Logo photoarts gallery">
-        </div>
-        <hr>
+        
+        <?php galeria_logo(); ?>
+        
     </div>
     <div class="row">
         <div class='scroll_post_container'>

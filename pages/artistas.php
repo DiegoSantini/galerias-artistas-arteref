@@ -9,6 +9,8 @@
             <?php galeria_menu(); ?>
         </div>
     </div>
+    
+    <?php galeria_logo(); ?>
 
     <div class="row">
         <div class="col-lg-12">

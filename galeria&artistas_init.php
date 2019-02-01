@@ -17,6 +17,7 @@ require 'components/galeria_conteudo/galeria_conteudo.php';
 require 'components/galeria_trabalhos/galeria_trabalhos.php';
 require 'components/galeria_contato/form_contato.php';
 require 'components/galeria_contato/google_maps.php';
+require 'components/galeria_logo/galeria_logo.php';
 require 'controllers/form.php';
 
 function galeria_artistas_enqeue_scripts(){
