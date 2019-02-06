@@ -26,7 +26,7 @@ require 'controllers/valida_form.php';
 
 /*
 *
-*Instala banco de dados 
+*Instala banco de dados com as tabelas do plugin
 *
 */
 $db_artista = new db_galeria_artista();
@@ -50,12 +50,12 @@ $db->install();
 */
 
 function galeria_artistas_enqeue_scripts(){
-    wp_enqueue_style( 'galeria_artistas_menu_style', plugins_url('galerias&artistas/components/galeria_menu/style.css'));
-    wp_enqueue_style( 'galeria_artistas_artistas_style', plugins_url('galerias&artistas/components/galeria_artistas/style.css'));
-    wp_enqueue_style( 'galeria_artistas_conteudo_style', plugins_url('galerias&artistas/components/galeria_conteudo/style.css'));
-    wp_enqueue_style( 'galeria_trabalhos_conteudo_style', plugins_url('galerias&artistas/components/galeria_trabalhos/style.css'));
-    wp_enqueue_style( 'galeria_trabalhos_contato_style', plugins_url('galerias&artistas/components/galeria_contato/style.css'));
-    wp_enqueue_script('galeria_artistas_click_and_drag_scroll', plugins_url('galerias&artistas/components/galeria_artistas/click_and_drag_scroll.js'),'jquery', 1.4, true);
+    wp_enqueue_style( 'galeria_artistas_menu_style', plugins_url('components/galeria_menu/style.css', __FILE__));
+    wp_enqueue_style( 'galeria_artistas_artistas_style', plugins_url('components/galeria_artistas/style.css', __FILE__));
+    wp_enqueue_style( 'galeria_artistas_conteudo_style', plugins_url('components/galeria_conteudo/style.css', __FILE__));
+    wp_enqueue_style( 'galeria_trabalhos_conteudo_style', plugins_url('components/galeria_trabalhos/style.css', __FILE__));
+    wp_enqueue_style( 'galeria_trabalhos_contato_style', plugins_url('components/galeria_contato/style.css', __FILE__));
+    wp_enqueue_script('galeria_artistas_click_and_drag_scroll', plugins_url('components/galeria_artistas/click_and_drag_scroll.js', __FILE__),'jquery', 1.4, true);
 }
 
 function galeria_arteref_init(){

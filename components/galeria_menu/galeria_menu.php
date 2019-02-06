@@ -6,7 +6,7 @@ function galeria_menu(){
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo esc_url( get_page_link( 42614 ) ); ?>">Sobre</a>
+                    <a class="nav-link" href="<?php echo esc_url( get_page_link( 45161 ) ); ?>">Sobre</a>
                 </li>
                 <li><span>|</span></li>
                 <li class="nav-item">
