@@ -1,6 +1,4 @@
 <?php 
-    require 'valida_form.php';
-    require 'banco_de_dados/db.php';
 
     if (isset($_POST['email']) && isset($_POST['nome']) && isset($_POST['mensagem'])) {
 
@@ -38,7 +36,6 @@
             mail($to, $subject, $message, $headers);
 
             $db = new create_db_galeria_artista();
-            $db->install();
             $db->insert($_POST['email'], $_POST['nome'], $_POST['mensagem']);
 
             $page = get_page_by_title('contato-galeria');
