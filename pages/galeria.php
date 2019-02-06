@@ -4,6 +4,7 @@
 
 <div class="container">
     <div class="row">
+
         <div class="col-lg-6">
             <?php galeria_menu(); ?> 
         </div>
@@ -18,7 +19,7 @@
     </div>
     <div class="row">
         <div class='scroll_post_container'>
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(0); ?>
         </div>
     </div>
     <hr>
@@ -30,13 +31,13 @@
     <hr>
     <div class="row">
         <div class='scroll_post_container'>
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(6); ?>
         </div>
     </div>
     <hr>
     <div class="row">
         <div class='scroll_post_container'>
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(12); ?>
         </div>
     </div>
 </div>

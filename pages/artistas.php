@@ -29,7 +29,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(0); ?>
         </div>
         <hr>
 
@@ -50,7 +50,7 @@
 
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(6); ?>
         </div>
         <hr>
 
@@ -67,7 +67,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(12); ?>
         </div>
         <hr>
 
@@ -85,7 +85,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(18); ?>
         </div>
         <hr>
 
@@ -105,7 +105,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(0); ?>
         </div>
         <hr>
 
@@ -125,7 +125,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(6); ?>
         </div>
         <hr>
 
@@ -142,7 +142,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(12); ?>
         </div>
         <hr>
 
@@ -159,7 +159,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(18); ?>
         </div>
         <hr>
 
@@ -182,7 +182,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(0); ?>
         </div>
         <hr>
 
@@ -199,7 +199,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(6); ?>
         </div>
         <hr>
 
@@ -216,7 +216,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(12); ?>
         </div>
         <hr>
 
@@ -233,7 +233,7 @@
         </div>
 
         <div class="scroll_post_container">
-            <?php galeria_artistas(); ?>
+            <?php galeria_artistas(18); ?>
         </div>
         <hr>
 

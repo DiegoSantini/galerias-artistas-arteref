@@ -10,15 +10,15 @@ function galeria_menu(){
                 </li>
                 <li><span>|</span></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="galeria/trabalhos-galeria">Obras</a>
+                    <a class="nav-link" href="/galeria/trabalhos-galeria">Obras</a>
                 </li>
                 <li><span>|</span></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="galeria/artistas-galeria">Artistas</a>
+                    <a class="nav-link" href="/galeria/artistas-galeria">Artistas</a>
                 </li>
                 <li><span>|</span></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="galeria/contato-galeria">Contato</a>
+                    <a class="nav-link" href="/galeria/contato-galeria">Contato</a>
                 </li>
             </ul>
         </div>
