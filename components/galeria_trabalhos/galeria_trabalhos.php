@@ -29,7 +29,7 @@
                 <div class="column">
                     <?php foreach($obras_photoarts_collum_2 as $key){ ?>
                         <div>
-                            <a href="<?php echo get_home_url() . 'galeria/trabalhos-galeria/obra_photoarts/?artista=/dba&obra=' . $key['id']; ?>">
+                            <a href="<?php echo get_home_url() . '/galeria/trabalhos-galeria/obra_photoarts/?artista=/dba&obra=' . $key['id']; ?>">
                                 <img src="<?php echo $key["imagem_url"]; ?>" style="width:100%">
                                 <h5> <?php echo $key["nome_obra"]; ?> </h5>
                                 <p><?php echo $key["acabamento_obra"]; ?></p>
