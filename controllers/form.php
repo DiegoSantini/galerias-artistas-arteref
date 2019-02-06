@@ -7,7 +7,7 @@
             $captcha_data = $_POST['g-recaptcha-response'];
             $resposta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LczN4YUAAAAAIIkOnNyxcAZfexPoMXx3BR4M7kw&response=".$captcha_data."&remoteip=".$_SERVER['REMOTE_ADDR']);
             if (!$resposta.success) {
-                header("Location: http://localhost/novo_arteref/index.php/galeria/contato-galeria/?form=recaptcha_error");
+                header("Location: https://arteref.com/galeria/contato-galeria/?form=recaptcha_error");
                 exit();
             }
             
@@ -40,11 +40,11 @@
 
             $page = get_page_by_title('contato-galeria');
 
-            header("Location: http://localhost/novo_arteref/index.php/galeria/contato-galeria/?form=true");
+            header("Location: https://arteref.com/galeria/contato-galeria/galeria/contato-galeria/?form=true");
             exit();
 
         }else{
-            header("Location: http://localhost/novo_arteref/index.php/galeria/contato-galeria/?form=false");
+            header("Location: https://arteref.com/galeria/contato-galeria/contato-galeria/?form=false");
             exit();
         }
        
