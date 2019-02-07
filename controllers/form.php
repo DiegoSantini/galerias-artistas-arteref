@@ -6,11 +6,11 @@
 
             $captcha_data = $_POST['g-recaptcha-response'];
             $resposta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LczN4YUAAAAAIIkOnNyxcAZfexPoMXx3BR4M7kw&response=".$captcha_data."&remoteip=".$_SERVER['REMOTE_ADDR']);
+            
             if (!$resposta.success) {
                 header("Location: https://arteref.com/galeria/contato-galeria/?form=recaptcha_error");
                 exit();
             }
-            
         }
 
         $form = new valida_form();
@@ -47,6 +47,6 @@
             header("Location: https://arteref.com/galeria/contato-galeria/contato-galeria/?form=false");
             exit();
         }
-       
+
     }
 ?>

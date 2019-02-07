@@ -12,11 +12,6 @@
     }
 
     function galeria_obra_conteudo($galeria_artista, $galeria_obra){ 
-
-        /*
-        $obra = new db_galeria_artista_obras();
-        $obra->insert('11', 'Clifs of Mother', 'https://arteref.com/wp-content/uploads/2019/02/Clifs-of-Mother.jpg', 'Situado no país Clare, na fronteira de Burren. Area, no penhasco de Moher, é uma das mais espetaculares vistas da Irlanda. Está a 230 metros acima do solo, no ponto mais alto, e tem 8 kilometros de comprimento.', 'Metacrilato 7mm 100x100cm', 'R$ 5.179,00', 'Paisagem');
-        */
        
         $obra = new db_galeria_artista_obras();
         $obra_resultado = $obra->get($galeria_obra);

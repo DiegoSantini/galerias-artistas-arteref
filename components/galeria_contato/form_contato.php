@@ -17,7 +17,7 @@
         }
 
         ?>
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 
         <form action="form.php" method="post" id="form.php">
 
@@ -30,7 +30,7 @@
             <div class="form-group">
                 <textarea type="text" name="mensagem" placeholder="Informe a obra pela qual você se interessou" cols="40" rows="10" required></textarea>
             </div>
-            <div class="g-recaptcha" name="recaptcha_google" data-callback="capcha_filled" data-expired-callback="capcha_expired" data-sitekey="6LdhPo4UAAAAAIcsd4E4jxGntKjybfdNCJrZiIDe"></div>
+            <div class="g-recaptcha" name="recaptcha_google" data-sitekey="6LczN4YUAAAAAJAdzyW8kCXDCCYgrWLFv361GstY"></div>
             <br>
             <div class="form-group">
                 <button type="submit" class="btn-arteref-submit">Enviar</button>
