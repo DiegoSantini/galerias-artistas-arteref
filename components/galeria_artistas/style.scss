@@ -14,13 +14,10 @@ $cor_principal_custom_content: rgb(0, 0, 0);
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    
-
     @media (max-width: 540px){
         margin: 0px;
         margin-bottom: 60px;
     }
-
     .card {
       flex: 0 0 auto;
       margin-right: 3px;
