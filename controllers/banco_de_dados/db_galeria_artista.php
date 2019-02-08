@@ -48,6 +48,13 @@
 
         }
 
+        function get_all(){
+            global $wpdb;
+            $table_name = $wpdb->prefix . "galeria_artista";
+            $obras = $wpdb->get_results( "SELECT * FROM $table_name", ARRAY_A );
+            return $obras;
+        }
+
     }
 
     class db_galeria_artista_obras{

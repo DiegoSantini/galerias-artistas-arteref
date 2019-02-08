@@ -1,15 +1,15 @@
 $rosa : #ec008c;
 .galeria_nav_menu{
-    
-    color: white;
-    background-color: black;
+    color: rgb(66, 66, 66);
     margin: 10px;
     padding: 10px;
-    border-radius: 24px!important;
+    margin-right: 0;
+    padding-right: 0;
+    float: right;
     display: inline-block;
     a{
         text-decoration: none;
-        color: white;
+        color: rgb(66, 66, 66);
         transition-property: all;
         transition-duration: 0.3s;
         transition-timing-function: cubic-bezier(0.25, 0.1, 0.42, 2.04);
@@ -17,12 +17,12 @@ $rosa : #ec008c;
     }
     a:hover{
         text-decoration: none;
-        color: white;
+        color: rgb(66, 66, 66);
         border-bottom: 2px solid $rosa;
     }
     a:active, a:visited{
         text-decoration: none;
-        color: white;
+        color: rgb(66, 66, 66);
     }
     ul{
         list-style-type: none;
@@ -39,14 +39,6 @@ $rosa : #ec008c;
 .galeria_link_active{
     border-bottom: 2px solid $rosa;
 }
-.galeria_artista_titulo{
-    font-size: 40px;
-    margin: 10px;
-    padding: 10px;
-    text-align: end;
-    line-height: 30px;
-}
-
 .navbar-collapse.collapse {
     display: block!important;
   }
@@ -62,6 +54,10 @@ $rosa : #ec008c;
   .navbar-right {
     float: right!important;
   }
-  
-
-  
+.td-header-wrap{
+      display: none;
+}
+.galeria_menu_container{
+    padding-right: 0;
+    padding-left: 0;
+}

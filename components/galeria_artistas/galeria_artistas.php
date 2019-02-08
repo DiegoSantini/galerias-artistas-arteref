@@ -4,7 +4,7 @@
         $db_artista_resultado = array_slice($db_artista->get_all(), $range, 6);
 ?>
         <div class='scroll_posts'>
-                    
+            <h4>Eventos</h4>       
             <div class='scroll_container'>
 
                 <div class='scroll_button'>
@@ -36,7 +36,7 @@
                 </div>
                             
                 <div class='scroll_button'>
-                    <button class='scroll_next'><span class='glyphicon glyphicon-chevron-right'></span></button>
+                    <button class='scroll_next'><span class='glyphicon glyphicon-chevron-right galeria_artista_arrow'></span></button>
                 </div>
 
             </div>

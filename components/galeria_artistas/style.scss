@@ -31,7 +31,7 @@ $cor_principal_custom_content: rgb(0, 0, 0);
   .card {
     position: relative;
     overflow: hidden;
-    width: 343px;
+    width: 379px;
     background: rgb(53, 53, 53);
     color: white;
     white-space: initial;
@@ -82,11 +82,9 @@ $cor_principal_custom_content: rgb(0, 0, 0);
     margin-bottom: 100px;
     margin-top: 75px;
     span{
-        clear: both;
-        margin: 15px 0;
-        font-size: 1.24em;
-        background-color: $cor_principal_custom_content;;
-        color: white;
+        font-size: 1.60em;
+        color: rgb(0, 0, 0);
+        line-height: 278px;
         padding: 5px;
     }
     .scroll_prev{
@@ -100,11 +98,10 @@ $cor_principal_custom_content: rgb(0, 0, 0);
         margin: 6px;
         .scroll_button{
             button{
-                height: 100%;
-                margin: 6px;
+                position: absolute;
+                z-index: 100;
                 border: none;
-                color: black;
-                background-color: white;
+                background-color: rgba(255, 255, 255, 0);
             }
         }
     }
@@ -117,4 +114,12 @@ $cor_principal_custom_content: rgb(0, 0, 0);
 }
 .scroll_post_container{
     max-width: 100%;
+}
+.galeria_artista_lista{
+    ul{
+        list-style: none;
+    }
+}
+.galeria_artista_arrow{
+    margin-left: -50px;
 }

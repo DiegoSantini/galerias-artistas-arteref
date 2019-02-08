@@ -4,42 +4,41 @@
 
 <div class="container">
     <div class="row">
-
-        <div class="col-lg-6">
-            <?php galeria_menu(); ?> 
-        </div>
-        <div class="cole-lg-6 galeria_artista_titulo">
-            <div>
-               <span></span>
+        
+        <div class="col-lg-12 galeria_menu_container">
+            <div class="col-lg-6">
+                <span></span>
+            </div>
+            <div class="cole-lg-6">
+                <div>
+                    <?php galeria_menu(); ?> 
+                </div>
             </div>
         </div>
         
         <?php galeria_logo(); ?>
         
     </div>
+
+    <div class="row">
+        <?php galeria_evento_destaque(); ?>
+    </div>
+
+    <div class="row">
+       <?php galeria_conteudo(); ?>
+    </div>
+
     <div class="row">
         <div class='scroll_post_container'>
             <?php galeria_artistas(0); ?>
         </div>
     </div>
-    <hr>
+
     <div class="row">
-        <div class='scroll_post_container'>
-            <?php galeria_conteudo(); ?>
-        </div>
+        <?php galeria_artista_lista(); ?>
     </div>
     <hr>
-    <div class="row">
-        <div class='scroll_post_container'>
-            <?php galeria_artistas(6); ?>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class='scroll_post_container'>
-            <?php galeria_artistas(12); ?>
-        </div>
-    </div>
+    
 </div>
 
 <?php get_footer(); ?> 

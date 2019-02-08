@@ -1,3 +1,9 @@
+.galeria_conteudo{
+    margin-top: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    border-top: 1px solid #f1f1f1;
+    padding: 25px 0 12px 0;
+}
 .galeria_conteudo_titulo{
     border-bottom: solid 2px black;
     padding-bottom: 3px;
@@ -24,7 +30,113 @@
     }
 }
 .galeria_artista_logo{
-    text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    border-top: 1px solid #f1f1f1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    h1{
+        font-size: 40px;
+    }
+    img{
+        width: 163px;
+    }
+    .galeria_logo_img{
+        text-align: end;
+        padding-left: 0;
+    }
+}
+.galeria_evento_destaque{
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    .galeria_evento_texto{
+        padding-top: 10%;
+    }
+    p{
+        margin-bottom: 10px;
+    }
+    h2{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    i{
+        color:#868686; 
+    }
+    .galeria_evento_img{
+        padding: 0;
+    }
+}
+.galeria_evento_slide{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    .galeria_slide{
+        display: none;
+    }
+    .galeria_evento_prev, .galeria_evento_next{
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 1.30em;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    .galeria_evento_prev{
+        left: 0;
+    }
+    /* Position the "next button" to the right */
+    .galeria_evento_next{
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    /* On hover, add a black background color with a little bit see-through */
+    .galeria_evento_prev:hover, .galeria_evento_next:hover {
+        background-color: rgba(230, 230, 230, 0.8);
+    }
+}
+  
+  /* The dots/bullets/indicators */
+  .galeria_dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #e4e4e4;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .galeria_dot:hover {
+    background-color: #202020;
+  }
+  
+  /* Fading animation */
+  .galeria_fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes galeria_fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes galeria_fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+.ge_texto{
+    display: none;
+    transition: all 0.6s ease;
 }

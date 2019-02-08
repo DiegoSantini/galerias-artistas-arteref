@@ -4,12 +4,21 @@
 
 <div class="container">
     <div class="row">
+            
+    <div class="col-lg-12 galeria_menu_container">
         <div class="col-lg-6">
-            <?php galeria_menu(); ?>
+            <span></span>
+        </div>
+        <div class="cole-lg-6">
+            <div>
+                <?php galeria_menu(); ?> 
+            </div>
         </div>
     </div>
-    
+
     <?php galeria_logo(); ?>
+
+    </div>
     
     <div class="row">
         <?php galeria_obra(); ?>

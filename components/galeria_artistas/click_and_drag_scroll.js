@@ -51,11 +51,11 @@ const slider = document.querySelectorAll('.scrolling-wrapper');
 
     
     scroll_prev.addEventListener('click', () => {
-        slider_01.scrollLeft = slider_01.scrollLeft - 200;
+        slider_01.scrollLeft = slider_01.scrollLeft - 800;
     });
 
     scroll_next.addEventListener('click', () => {
-        slider_01.scrollLeft = slider_01.scrollLeft + 200;
+        slider_01.scrollLeft = slider_01.scrollLeft + 800;
     });
 
     /*

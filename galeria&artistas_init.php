@@ -7,21 +7,23 @@
  * Author URI: Willian/de/oliveira
  * Version: 1.0 beta
  */
+
 if(! defined('ABSPATH') ){
     exit; //Exit if accessed directly
 }
-
+require 'controllers/banco_de_dados/db_galeria_artista.php';
 require 'components/galeria_menu/galeria_menu.php';
 require 'components/galeria_artistas/galeria_artistas.php';
+require 'components/galeria_conteudo/galeria_evento_destaque.php';
 require 'components/galeria_conteudo/galeria_conteudo.php';
 require 'components/galeria_trabalhos/galeria_trabalhos.php';
 require 'components/galeria_contato/form_contato.php';
 require 'components/galeria_contato/google_maps.php';
 require 'components/galeria_logo/galeria_logo.php';
+require 'components/galeria_artistas/galeria_artista_lista.php';
 require 'controllers/form.php';
 require 'components/galeria_obra/galeria_obra.php';
 require 'controllers/banco_de_dados/db.php';
-require 'controllers/banco_de_dados/db_galeria_artista.php';
 require 'controllers/valida_form.php';
 
 /*
@@ -29,6 +31,7 @@ require 'controllers/valida_form.php';
 *Instala banco de dados com as tabelas do plugin
 *
 */
+
 $db_artista = new db_galeria_artista();
 $db_artista->install();
 
@@ -56,6 +59,7 @@ function galeria_artistas_enqeue_scripts(){
     wp_enqueue_style( 'galeria_trabalhos_conteudo_style', plugins_url('components/galeria_trabalhos/style.css', __FILE__));
     wp_enqueue_style( 'galeria_trabalhos_contato_style', plugins_url('components/galeria_contato/style.css', __FILE__));
     wp_enqueue_script('galeria_artistas_click_and_drag_scroll', plugins_url('components/galeria_artistas/click_and_drag_scroll.js', __FILE__),'jquery', 1.4, true);
+    wp_enqueue_script('galeria_artistas_slides_conteudo', plugins_url('components/galeria_conteudo/slides_conteudo.js', __FILE__),'jquery', 1.4, true);
 }
 
 function galeria_arteref_init(){
