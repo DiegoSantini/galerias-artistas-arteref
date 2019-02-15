@@ -25,6 +25,7 @@ require 'controllers/form.php';
 require 'components/galeria_obra/galeria_obra.php';
 require 'controllers/banco_de_dados/db.php';
 require 'controllers/valida_form.php';
+require 'controllers/banco_de_dados/data_base.php';
 
 /*
 *
@@ -32,19 +33,19 @@ require 'controllers/valida_form.php';
 *
 */
 
-$db_artista = new db_galeria_artista();
-$db_artista->install();
+db_galeria_artista_dao::install();
 
-$db_artista_obra = new db_galeria_artista_obras();
-$db_artista_obra->install();
 
-$db = new create_db_galeria_artista();
-$db->install();
 /*
-*
-*
+$teste = new db_galeria_artista_dao('wp_galeria_artista');
+$data  = $teste->get(
+    'wp_galeria_artista',
+    array(
+        'select' => '*',
+        'id'     => '1'
+    )
+);
 */
-
 
 /*
 *

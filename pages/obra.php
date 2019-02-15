@@ -14,10 +14,11 @@
                 <?php galeria_menu(); ?> 
             </div>
         </div>
+        <br>
+        <br>
+        <hr width='100%'>
     </div>
-
-    <?php galeria_logo(); ?>
-
+    
     </div>
     
     <div class="row">

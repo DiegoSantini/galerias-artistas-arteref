@@ -36,6 +36,7 @@
 
             mail($to, $subject, $message, $headers);
 
+            /*
             $db = new create_db_galeria_artista();
             $db->insert($_POST['email'], $_POST['nome'], $_POST['mensagem']);
 
@@ -43,6 +44,7 @@
 
             header("Location: http://localhost/novo_arteref/index.php/galeria/contato-galeria/galeria/contato-galeria/?form=true");
             exit();
+            */
 
         }else{
             header("Location: http://localhost/novo_arteref/index.php/galeria/contato-galeria/contato-galeria/?form=false");
