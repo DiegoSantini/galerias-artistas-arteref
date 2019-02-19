@@ -14,15 +14,17 @@
                 <?php galeria_menu(); ?> 
             </div>
         </div>
-        <br>
-        <br>
-        <hr width='100%'>
     </div>
+
+    <?php galeria_logo($data_galeria = null); ?>
     
+    <div class='col-lg-12 galeria_menu_interno_container'>
+        <?php  galeria_menu_interno(); ?>
+    </div>
     </div>
     
     <div class="row">
-        <?php galeria_obra(); ?>
+        <?php  galeria_obra_conteudo(); ?>
     </div>
 </div>
 

@@ -8,27 +8,6 @@
     border-bottom: solid 2px black;
     padding-bottom: 3px;
 }
-.galeria_conteudo_estilos{
-   ul{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        margin-top: 10px;
-   }
-   li{
-        border-radius: 12px;
-        margin-top: 6px;
-        padding: 6px;
-        background-color: #ec008c;
-        cursor: pointer;
-        color: white;
-        display: inline-block;
-        transition: all 0.4s;
-   }
-   li:hover{
-    transform: scale(1.1);
-    }
-}
 .galeria_artista_logo{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -50,6 +29,7 @@
 }
 .galeria_evento_destaque{
     text-align: center;
+    margin-top: 8px;
     padding-left: 0;
     padding-right: 0;
     .galeria_evento_texto{

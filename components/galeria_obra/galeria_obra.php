@@ -1,73 +1,80 @@
 <?php
-    function galeria_obra(){
-
-        if (isset($_GET['artista']) &&  isset($_GET['obra'])){
-            $galeria_artista = $_GET['artista'];
-            $galeria_obra    = $_GET['obra'];
-            galeria_obra_conteudo($galeria_artista, $galeria_obra);
-        }else{
-            echo '<div class="col-lg-12">nenhum artista encontrado!</div>';
-        }
-
-    }
-
-    function galeria_obra_conteudo($galeria_artista, $galeria_obra){ 
+    function galeria_obra_conteudo(){ 
        
-        $obra = new db_galeria_artista_obras();
-        $obra_resultado = $obra->get($galeria_obra);
+    if (isset($_GET['id_obra'])) {
+        $id = $_GET['id_obra'];
 
-        $artista = new db_galeria_artista();
-        $artista_resultado = $artista->get($obra_resultado['id_artista']);
-        
+        $db = new db_galeria_artista_dao();
+        $data_galeria_obra = $db->get(
+            'wp_galeria_artista_obras',
+            array(
+                'select' => '*',
+                'campo'  => 'id',
+                'id'     => $id
+            )
+        );
+
+        $id_artista = $data_galeria_obra[0]['id_artista'];
+
+        $db = new db_galeria_artista_dao();
+        $data_galeria_artista = $db->get(
+            'wp_galeria_artista',
+            array(
+                'select' => '*',
+                'campo'  => 'id',
+                'id'     => $id_artista
+            )
+        );
+
+    }else{
+        return;
+    }
         ?>
-
-            <div class="col-lg-6">
-                <img src="<?php echo $obra_resultado['imagem_url']; ?>" alt="">
+        <div class='galeria_obra_container'>
+            <div class="col-lg-7">
+                <img src="<?php echo $data_galeria_obra[0]['imagem_url']; ?>" alt="">
             </div>
 
-            <div class="col-lg-6">
-                <h2><?php echo $obra_resultado['nome_obra']; ?></h2>
-                <h4><?php echo $artista_resultado['nome_artista']; ?></h4>
+            <div class="col-lg-5">
+                <h2><?php echo $data_galeria_obra[0]['nome_obra']; ?></h2>
+                <h4><?php echo $data_galeria_artista[0]['nome_artista']; ?></h4>
                 <div>
                     <p>
-                       <?php echo $obra_resultado['descricao_obra']; ?>
+                       <?php echo $data_galeria_obra[0]['descricao_obra']; ?>
                     </p>
                 </div>
-
-                <div>
-                    <p>
-                        <p>
-                            <?php echo $obra_resultado['acabamento_obra']; ?>
-                        </p>
-                        <p>
-                            <?php echo $obra_resultado['preco']; ?>
-                        </p>
-                        
-                    </p>
-                </div>
-
-                <div>
-                    <p><button class='btn btn-default'>Entrar em contato</button></p>
-                </div>
-
+                
                 <div class="galeria_conteudo_estilos">
-                    <span>Estilos:</span>
-                    <ul>
-                        <li><?php echo $obra_resultado['estilo_obra']; ?></li>
-                    </ul>
+                    <p>Estilo: <?php echo $data_galeria_obra[0]['estilo_obra']; ?> </p>
                 </div>
+
+                <div>
+                    <p>
+                        <p>
+                            <?php echo $data_galeria_obra[0]['acabamento_obra']; ?>
+                        </p>
+                        <p>
+                            <?php echo $data_galeria_obra[0]['preco']; ?>
+                        </p>
+                    </p>
+                </div>
+
+                <div>
+                    <p><button>Entrar em contato</button></p>
+                </div>
+
                 <br>
 
             </div>
 
-            <div>
+            <div class='col-lg-12'>
                 <hr>
                 <h2>Outras obras</h2>
-                <?php galeria_trabalhos(); ?>
+                <?php galeria_trabalhos($data_galeria_obra[0]['id_artista']); ?>
                 <hr>
                 <br>
             </div>
-
+        </div>
         <?php
     }
 

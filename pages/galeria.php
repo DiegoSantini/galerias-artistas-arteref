@@ -48,6 +48,9 @@ if (isset($_GET['id'])) {
         
         <?php galeria_logo($data_galeria); ?>
         
+        <div class='col-lg-12 galeria_menu_interno_container'>
+            <?php  galeria_menu_interno(); ?>
+        </div>
     </div>
 
     <div class="row">

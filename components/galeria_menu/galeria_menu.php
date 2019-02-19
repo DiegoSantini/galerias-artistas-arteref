@@ -1,7 +1,18 @@
 <?php
 function galeria_menu(){
-?>
 
+    $galeria = get_page_by_title('galeria', ARRAY_A);
+    $galeria_url = $galeria['guid'];
+    
+
+    $galerias = get_page_by_title('galerias', ARRAY_A);
+    $galerias_url = $galerias['guid'];
+
+    $revista_url = get_home_url();
+
+    $museus = get_page_by_title('museus', ARRAY_A);
+    $museus_url = $galerias['guid'];
+?>
     <nav class="navbar navbar-expand-lg galeria_nav_menu">
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -12,19 +23,19 @@ function galeria_menu(){
                 -->
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/galeria/trabalhos-galeria">Home</a>
+                    <a class="nav-link" href="<?php echo $galerias_url; ?>">Mais obras</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/galeria/artistas-galeria">Galerias</a>
+                    <a class="nav-link" href="<?php echo $galerias_url; ?>">Galerias</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/galeria/contato-galeria">Revista</a>
+                    <a class="nav-link" href="<?php echo $revista_url; ?>">Revista</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/galeria/contato-galeria">Museus</a>
+                    <a class="nav-link" href="#">Museus</a>
                 </li>
             </ul>
         </div>

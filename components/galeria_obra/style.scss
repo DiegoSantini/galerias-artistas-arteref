@@ -1,0 +1,39 @@
+$gray_color: #b1b1b1;
+$rosa : #ec008c;
+.galeria_obra_container{
+    margin-top: 20px;
+    p{
+        color: $gray_color;
+    }
+    h2{
+        margin-top: 0;
+    }
+    button{
+        padding: 10px;
+        padding-left: 35px;
+        padding-right: 35px;
+        border: none;
+        color:white;
+        background-color: rgb(26, 26, 26);
+        transition: all 400ms ease;
+        &:hover{
+            background-color: $rosa;
+            color: white;
+        }
+    }
+}
+.galeria_conteudo_estilos{
+    ul{
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         margin-top: 10px;
+    }
+    li{
+         border-radius: 12px;
+         margin-top: 6px;
+         padding: 6px;
+         color: $gray_color;
+         display: inline-block;
+    }
+ }

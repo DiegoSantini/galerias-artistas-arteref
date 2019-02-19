@@ -19,6 +19,10 @@
         
         <?php galeria_logo(); ?>
         
+        <div class='col-lg-12 galeria_menu_interno_container'>
+            <?php  galeria_menu_interno(); ?>
+        </div>
+        
     </div>
 
     <div class="row">
