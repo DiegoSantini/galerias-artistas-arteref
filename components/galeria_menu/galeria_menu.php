@@ -12,7 +12,7 @@ function galeria_menu(){
                 -->
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/galeria/trabalhos-galeria">Obras</a>
+                    <a class="nav-link" href="/galeria/trabalhos-galeria">Home</a>
                 </li>
                 
                 <li class="nav-item">
@@ -21,10 +21,6 @@ function galeria_menu(){
                 
                 <li class="nav-item">
                     <a class="nav-link" href="/galeria/contato-galeria">Revista</a>
-                </li>
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="/galeria/contato-galeria">Artistas</a>
                 </li>
                 
                 <li class="nav-item">

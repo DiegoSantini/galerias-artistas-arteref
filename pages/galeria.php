@@ -1,5 +1,35 @@
 <head>
-<?php get_header(); ?>
+<?php 
+get_header(); 
+
+if (isset($_GET['id'])) {
+
+    $id = $_GET['id'];
+    $db = new db_galeria_artista_dao();
+    $data_galeria = $db->get(
+        'wp_galerias',
+        array(
+            'select' => '*',
+            'campo'  => 'id',
+            'id'     => $id
+        )
+    );
+
+    $data_eventos = $db->get(
+        'wp_galeria_eventos',
+        array(
+            'select' => '*',
+            'campo'  => 'id_galeria',
+            'id' => $id
+        )
+    );
+
+}else{
+    $data_galeria = null;
+    $data_eventos = null;
+}
+
+?>
 </head>
 
 <div class="container">
@@ -16,21 +46,21 @@
             </div>
         </div>
         
-        <?php galeria_logo(); ?>
+        <?php galeria_logo($data_galeria); ?>
         
     </div>
 
     <div class="row">
-        <?php galeria_evento_destaque(); ?>
+        <?php galeria_evento_destaque($data_eventos); ?>
     </div>
 
     <div class="row">
-       <?php galeria_conteudo(); ?>
+       <?php galeria_conteudo($data_galeria); ?>
     </div>
 
     <div class="row">
         <div class='scroll_post_container'>
-            <?php galeria_artistas(0); ?>
+            <?php galeria_artistas($data_eventos); ?>
         </div>
     </div>
 

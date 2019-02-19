@@ -1,7 +1,10 @@
 <?php 
-    function galeria_artistas($range){
+    function galeria_artistas($data_eventos){
+        $cards = array_slice($data_eventos, 2, 6);
+        /*
         $db_artista = new db_galeria_artista_obras();
         $db_artista_resultado = array_slice($db_artista->get_all(), $range, 6);
+        */
 ?>
         <div class='scroll_posts'>
             <h4>Eventos</h4>       
@@ -12,13 +15,15 @@
                 </div>
 
                 <div class="scrolling-wrapper">
-                    <?php foreach($db_artista_resultado as $key){ ?>
+                    <?php foreach($cards as $key){ ?>
                         <a href="<?php echo get_home_url() . '/galeria/trabalhos-galeria/obra_photoarts/?artista=/dba&obra=' . $key['id']; ?>">
                             <div class="card">
-                                <img src="<?php echo $key['imagem_url']; ?>" alt="">
+                                <img src="<?php echo $key['url_img_destaque']; ?>" alt="">
                                     <div>
-                                        <?php echo $key['nome_obra']; ?>
+                                        <?php echo $key['nome_evento']; ?>
+                                        <p><?php echo date('d/m/Y', strtotime($key['data_inicio'])) . ' - ' . date('d/m/y', strtotime($key['data_termino'])); ?></p>
                                     </div>
+
                             </div>
                         </a>
                     <?php } ?>

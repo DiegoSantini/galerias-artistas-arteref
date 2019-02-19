@@ -7,7 +7,7 @@
             global $wpdb;
             $charset_collate = $wpdb->get_charset_collate();
 
-            //verifica se o banco de dadosjá foi instalado 
+            //verifica se o banco de dados já foi instalado 
             $install_ready = self::intall_ready();
             if ($install_ready) {return;}
             /* */
@@ -27,7 +27,7 @@
                 
                 dbDelta( $sql_wp_galeria_artista );
 
-                $sql_wp_galerias_artista_obras = "CREATE TABLE wp_galerias_artista_obras (
+                $sql_wp_galerias_artista_obras = "CREATE TABLE wp_galeria_artista_obras (
                     id mediumint(9) NOT NULL AUTO_INCREMENT,
                     data datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
                     id_artista mediumint(9) NOT NULL,
@@ -45,7 +45,8 @@
                 $sql_wp_galerias = "CREATE TABLE wp_galerias (
                     id mediumint(9) NOT NULL AUTO_INCREMENT,
                     data datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-                    nome_gaelria varchar(55) NOT NULL,
+                    nome_galeria varchar(55) NOT NULL,
+                    local varchar(55) NOT NULL,
                     descricao_galeria text NOT NULL,
                     logo_url varchar(250) NOT NULL,
                     PRIMARY KEY  (id)
@@ -69,11 +70,13 @@
                     id mediumint(9) NOT NULL AUTO_INCREMENT,
                     data datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
                     nome_evento tinytext NOT NULL,
+                    url_img_destaque varchar(250) NOT NULL,
                     local tinytext NOT NULL,
                     data_inicio datetime NOT NULL,
                     data_termino datetime NOT NULL, 
                     descricao_resumida text NOT NULL,
                     descricao_completa text NOT NULL,
+                    obras varchar(250) NOT NULL,
                     id_galeria mediumint(9) NOT NULL, 
                     PRIMARY KEY  (id)
                   ) $charset_collate;";
@@ -105,7 +108,7 @@
         public function get($table_name, $params){
             global $wpdb;
             if (isset($params['id'])) {
-                $query = "SELECT $params[select] FROM $table_name WHERE id = $params[id]";
+                $query = "SELECT $params[select] FROM $table_name WHERE $params[campo] = $params[id]";
             }else{
                 $query = "SELECT $params[select] FROM $table_name";
             }

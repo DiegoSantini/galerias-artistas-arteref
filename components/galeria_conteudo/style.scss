@@ -32,8 +32,6 @@
 .galeria_artista_logo{
     margin-top: 10px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #f1f1f1;
-    border-top: 1px solid #f1f1f1;
     padding-top: 20px;
     padding-bottom: 20px;
     h1{
@@ -45,6 +43,9 @@
     .galeria_logo_img{
         text-align: end;
         padding-left: 0;
+    }
+    p{
+        color: gray;
     }
 }
 .galeria_evento_destaque{
@@ -139,4 +140,14 @@
 .ge_texto{
     display: none;
     transition: all 0.6s ease;
+}
+.galeria_artista_conteudo{
+    margin-bottom: 25px;
+    margin-top: 25px;
+    h3{
+       margin-top: 0; 
+    }
+    h1{
+        margin-top: 0;
+    }
 }

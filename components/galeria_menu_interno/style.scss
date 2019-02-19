@@ -1,0 +1,40 @@
+$rosa : #ec008c;
+.galeria_menu_interno_container{
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+}
+.galeria_nav_menu_interno{
+    color: rgb(66, 66, 66);
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 10px;
+    margin-right: 0;
+    padding-right: 0;
+    display: inline-block;
+    a{
+        text-decoration: none;
+        color: rgb(66, 66, 66);
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(0.25, 0.1, 0.42, 2.04);
+        transition-delay: 0s;
+    }
+    a:hover{
+        text-decoration: none;
+        color: $rosa;
+    }
+    a:active, a:visited{
+        text-decoration: none;
+        color: rgb(66, 66, 66);
+    }
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li{
+            span{
+                color: $rosa;
+            }
+        }
+    }
+}

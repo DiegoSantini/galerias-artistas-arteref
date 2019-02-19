@@ -13,19 +13,20 @@ if(! defined('ABSPATH') ){
 }
 require 'controllers/banco_de_dados/db_galeria_artista.php';
 require 'components/galeria_menu/galeria_menu.php';
-require 'components/galeria_artistas/galeria_artistas.php';
+require 'components/galeria_click_and_drag_slider/galeria_click_and_drag_slider.php';
 require 'components/galeria_conteudo/galeria_evento_destaque.php';
 require 'components/galeria_conteudo/galeria_conteudo.php';
 require 'components/galeria_trabalhos/galeria_trabalhos.php';
 require 'components/galeria_contato/form_contato.php';
 require 'components/galeria_contato/google_maps.php';
 require 'components/galeria_logo/galeria_logo.php';
-require 'components/galeria_artistas/galeria_artista_lista.php';
+require 'components/galeria_click_and_drag_slider/galeria_artista_lista.php';
 require 'controllers/form.php';
 require 'components/galeria_obra/galeria_obra.php';
 require 'controllers/banco_de_dados/db.php';
 require 'controllers/valida_form.php';
 require 'controllers/banco_de_dados/data_base.php';
+require 'components/galeria_menu_interno/galeria_menu_interno.php';;
 
 /*
 *
@@ -33,9 +34,40 @@ require 'controllers/banco_de_dados/data_base.php';
 *
 */
 
-db_galeria_artista_dao::install();
+//db_galeria_artista_dao::install();
+date_default_timezone_set('America/Sao_Paulo');
+/*
+$db = new db_galeria_artista_dao();
+$db_insert = $db->insert(
+            'wp_galeria_eventos',
+            array(
+                'data' => date(DateTime::ISO8601),
+                'nome_evento' => 'Vernissage 6',
+                'url_img_destaque' => 'https://arteref.com/wp-content/uploads/2019/02/gotas.jpg',
+                'local' => 'Rua Monet, 731 - Granja Viana, Cotia - São Paulo',
+                'data_inicio' => '2018-12-20 19:00:00',
+                'data_termino' => '2018-12-22 22:00:00',
+                'descricao_resumida' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare nunc ut felis tincidunt, vel sollicitudin mauris dapibus. Sed tristique hendrerit lacus quis fermentum.',
+                'descricao_completa' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare nunc ut felis tincidunt, vel sollicitudin mauris dapibus. Sed tristique hendrerit lacus quis fermentum. Suspendisse in massa massa. Fusce varius mi ac ante auctor suscipit. Vestibulum varius, dolor hendrerit scelerisque efficitur, tortor justo mattis est, sed rutrum lacus ligula eu mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum euismod purus non sapien accumsan efficitur. Duis sit amet tincidunt sapien. Proin iaculis a diam vel iaculis. Vestibulum risus massa, condimentum et venenatis vitae, interdum quis urna.',
+                'obras' => '28,29,30,31',
+                'id_galeria' => 1
+            )
+    );
+*/
 
-
+/*
+$db = new db_galeria_artista_dao();
+$db_insert = $db->insert(
+            'wp_galerias',
+            array(
+                'data' => date(DateTime::ISO8601),
+                'nome_galeria' => 'Insta pop',
+                'logo_url' => 'https://instaarts.com/wp-content/uploads/2018/10/Logo-Instaarts-64x20-2.png',
+                'local' => 'Rio de Janeiro',
+                'descricao_galeria' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare nunc ut felis tincidunt, vel sollicitudin mauris dapibus. Sed tristique hendrerit lacus quis fermentum.',
+            )
+    );
+*/
 /*
 $teste = new db_galeria_artista_dao('wp_galeria_artista');
 $data  = $teste->get(
@@ -55,12 +87,15 @@ $data  = $teste->get(
 
 function galeria_artistas_enqeue_scripts(){
     wp_enqueue_style( 'galeria_artistas_menu_style', plugins_url('components/galeria_menu/style.css', __FILE__));
-    wp_enqueue_style( 'galeria_artistas_artistas_style', plugins_url('components/galeria_artistas/style.css', __FILE__));
+    wp_enqueue_style( 'galeria_artistas_artistas_style', plugins_url('components/galeria_click_and_drag_slider/style.css', __FILE__));
     wp_enqueue_style( 'galeria_artistas_conteudo_style', plugins_url('components/galeria_conteudo/style.css', __FILE__));
     wp_enqueue_style( 'galeria_trabalhos_conteudo_style', plugins_url('components/galeria_trabalhos/style.css', __FILE__));
     wp_enqueue_style( 'galeria_trabalhos_contato_style', plugins_url('components/galeria_contato/style.css', __FILE__));
-    wp_enqueue_script('galeria_artistas_click_and_drag_scroll', plugins_url('components/galeria_artistas/click_and_drag_scroll.js', __FILE__),'jquery', 1.4, true);
+    wp_enqueue_style( 'galeria_menu_interno_style', plugins_url('components/galeria_menu_interno/style.css', __FILE__));
+    wp_enqueue_script('galeria_artistas_click_and_drag_scroll', plugins_url('components/galeria_click_and_drag_slider/click_and_drag_scroll.js', __FILE__),'jquery', 1.4, true);
     wp_enqueue_script('galeria_artistas_slides_conteudo', plugins_url('components/galeria_conteudo/slides_conteudo.js', __FILE__),'jquery', 1.4, true);
+    wp_enqueue_script('galeria_artistas_readmore', plugins_url('node_modules/readmore-js/readmore.js', __FILE__),'jquery', 1.9, true);
+    wp_enqueue_script('galeria_artistas_readmore_js', plugins_url('components/galeria_trabalhos/read_more.js', __FILE__),'jquery', 1.9, true);
 }
 
 function galeria_arteref_init(){
@@ -125,3 +160,16 @@ function galeria_arteref_page_obra(){
     }
 }
 add_action( 'wp', 'galeria_arteref_page_obra');
+
+
+function galeria_arteref_page_artista(){
+
+    $page_6 = get_page_by_title('artista');
+    if( is_page($page_6->ID )){	
+        $dir = plugin_dir_path( __FILE__ );
+        add_action('wp_enqueue_scripts', 'galeria_artistas_enqeue_scripts');
+		include($dir."pages/artista.php");
+		die();
+    }
+}
+add_action( 'wp', 'galeria_arteref_page_artista');

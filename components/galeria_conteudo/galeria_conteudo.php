@@ -1,5 +1,11 @@
 <?php
-    function galeria_conteudo(){
+    function galeria_conteudo($data_galeria){
+        
+        if ($data_galeria != null) {
+            $descricao_galeria = $data_galeria[0]['descricao_galeria'];
+        }else{
+            $descricao_galeria = 'Photoarts possui um conhecimento único na seleção e curadoria de imagens em alta qualidade que mostram o trabalho artístico de cada um de seus fotógrafos. Este serviço de excelência está voltado a resolver as necessidades do cliente desde a escolha até a colocação das obras de arte. Com um laboratório próprio a Photoarts produz impressões e acabamentos de alta qualidade usada pelas mais prestigiadas galerias e museus por um preço acessível.';
+        }
         ?>
         <div class='galeria_conteudo'>
 
@@ -8,7 +14,7 @@
                     <h4>Sobre</h4>
                 </div>
                 <p>
-                Photoarts possui um conhecimento único na seleção e curadoria de imagens em alta qualidade que mostram o trabalho artístico de cada um de seus fotógrafos. Este serviço de excelência está voltado a resolver as necessidades do cliente desde a escolha até a colocação das obras de arte. Com um laboratório próprio a Photoarts produz impressões e acabamentos de alta qualidade usada pelas mais prestigiadas galerias e museus por um preço acessível.
+                    <?php echo $descricao_galeria; ?>
                 </p>
             </div>
             <!--

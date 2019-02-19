@@ -16,7 +16,14 @@
     -ms-flex: 25%; /* IE10 */
     flex: 25%;
     max-width: 25%;
-    padding: 0 4px;
+    padding: 10px 10px;
+    margin: 20px;
+    transition: all 400ms ease-out;
+    &:hover{
+        -webkit-box-shadow: -1px 5px 33px 0px rgba(0,0,0,0.16);
+        -moz-box-shadow: -1px 5px 33px 0px rgba(0,0,0,0.16);
+        box-shadow: -1px 5px 33px 0px rgba(0,0,0,0.16);
+    }   
 }
     
 .column img {
@@ -43,10 +50,20 @@
  }
 
  .galeria_trabalhos_grid_image{
-
+    margin-bottom: 25px;
+    margin-top: 25px;
     div{
         cursor: pointer;
         overflow: hidden;
+    }
+    a{
+        text-decoration: none;
+        color: #b1b1b1;
+        transition: all 400ms ease-out;
+    }
+    a:hover{
+        text-decoration: none;
+        color: #ea028c;
     }
     img{
         background-color: rgba(226, 226, 226, 0.856);
