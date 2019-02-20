@@ -35,7 +35,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $eventos_galeria_url; ?>">Eventos</a>
+                            <a class="nav-link" href="<?php echo $eventos_galeria_url  . '&id=1'; ?>">Eventos</a>
                         </li>
 
                         <li>

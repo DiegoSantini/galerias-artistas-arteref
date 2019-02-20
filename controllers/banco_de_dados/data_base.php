@@ -97,7 +97,6 @@
             }else{
                 return false;
             }
-
         }
 
         public function insert($table_name, $params){

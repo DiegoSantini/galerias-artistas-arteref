@@ -119,6 +119,17 @@ $cor_principal_custom_content: rgb(0, 0, 0);
     ul{
         list-style: none;
     }
+    a{
+        text-decoration: none;
+        color: rgb(138, 138, 138);
+        transition: all 400ms ease;
+        &:hover{
+            color: rgb(58, 58, 58);
+        }
+        &:active{
+            text-decoration: none;
+        }
+    }
 }
 .galeria_artista_arrow{
     margin-left: -50px;

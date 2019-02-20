@@ -11,22 +11,23 @@
 if(! defined('ABSPATH') ){
     exit; //Exit if accessed directly
 }
-require 'controllers/banco_de_dados/db_galeria_artista.php';
-require 'components/galeria_menu/galeria_menu.php';
-require 'components/galeria_click_and_drag_slider/galeria_click_and_drag_slider.php';
-require 'components/galeria_conteudo/galeria_evento_destaque.php';
-require 'components/galeria_conteudo/galeria_conteudo.php';
-require 'components/galeria_trabalhos/galeria_trabalhos.php';
-require 'components/galeria_contato/form_contato.php';
-require 'components/galeria_contato/google_maps.php';
-require 'components/galeria_logo/galeria_logo.php';
-require 'components/galeria_click_and_drag_slider/galeria_artista_lista.php';
-require 'controllers/form.php';
-require 'components/galeria_obra/galeria_obra.php';
-require 'controllers/banco_de_dados/db.php';
-require 'controllers/valida_form.php';
-require 'controllers/banco_de_dados/data_base.php';
-require 'components/galeria_menu_interno/galeria_menu_interno.php';;
+require_once 'controllers/banco_de_dados/db_galeria_artista.php';
+require_once 'components/galeria_menu/galeria_menu.php';
+require_once 'components/galeria_click_and_drag_slider/galeria_click_and_drag_slider.php';
+require_once 'components/galeria_conteudo/galeria_evento_destaque.php';
+require_once 'components/galeria_conteudo/galeria_conteudo.php';
+require_once 'components/galeria_trabalhos/galeria_trabalhos.php';
+require_once 'components/galeria_contato/form_contato.php';
+require_once 'components/galeria_contato/google_maps.php';
+require_once 'components/galeria_logo/galeria_logo.php';
+require_once 'components/galeria_click_and_drag_slider/galeria_artista_lista.php';
+require_once 'controllers/form.php';
+require_once 'components/galeria_obra/galeria_obra.php';
+require_once 'controllers/banco_de_dados/db.php';
+require_once 'controllers/valida_form.php';
+require_once 'controllers/banco_de_dados/data_base.php';
+require_once 'components/galeria_menu_interno/galeria_menu_interno.php';
+require_once 'components/galeria_conteudo/galeria_evento_lista.php';
 
 /*
 *
@@ -132,3 +133,15 @@ function galeria_arteref_page_artista(){
     }
 }
 add_action( 'wp', 'galeria_arteref_page_artista');
+
+function galeria_arteref_page_eventos(){
+
+    $page_6 = get_page_by_title('eventos');
+    if( is_page($page_6->ID )){	
+        $dir = plugin_dir_path( __FILE__ );
+        add_action('wp_enqueue_scripts', 'galeria_artistas_enqeue_scripts');
+		include($dir."pages/eventos.php");
+		die();
+    }
+}
+add_action( 'wp', 'galeria_arteref_page_eventos');
