@@ -80,18 +80,18 @@ function galeria_arteref_init(){
 
 add_action( 'wp', 'galeria_arteref_init' );
 
-function galeria_arteref_page_trabalhos(){
+function galeria_arteref_page_obras(){
 
     $page_2 = get_page_by_title('trabalhos-galeria');
     if( is_page($page_2->ID )){	
         $dir = plugin_dir_path( __FILE__ );
         add_action('wp_enqueue_scripts', 'galeria_artistas_enqeue_scripts');
-		include($dir."pages/trabalhos.php");
+		include($dir."pages/obras.php");
 		die();
     }
 }
 
-add_action( 'wp', 'galeria_arteref_page_trabalhos');
+add_action( 'wp', 'galeria_arteref_page_obras');
 
 function galeria_arteref_page_artistas(){
 

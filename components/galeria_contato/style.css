@@ -1,12 +1,1 @@
-.btn-arteref-submit {
-  padding: 12px;
-  border-radius: 6px;
-  background-color: black;
-  color: white;
-  transition: all 0.4s;
-}
-.btn-arteref-submit:hover {
-  background-color: #ec008c;
-}
-
-/*# sourceMappingURL=style.css.map */
+.btn-arteref-submit{padding:12px;border-radius:6px;background-color:#000;color:#fff;transition:all .4s}.btn-arteref-submit:hover{background-color:#ec008c}.galeria_contato_container{margin-top:35px}/*# sourceMappingURL=style.css.map */

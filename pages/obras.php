@@ -1,5 +1,21 @@
 <head>
-<?php get_header(); ?>
+<?php get_header(); 
+$id_artista = '*';
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $db = new db_galeria_artista_dao();
+    $data_galeria = $db->get(
+        'wp_galerias',
+        array(
+            'select' => '*',
+            'campo'  => 'id',
+            'id'     => $id
+        )
+    );
+}else{
+    $data_galeria = null;
+}
+?>
 </head>
 
 <div class="container">
@@ -17,7 +33,7 @@
             </div>
         </div>
 
-        <?php galeria_logo(); ?>
+        <?php galeria_logo($data_galeria); ?>
 
         <div class='col-lg-12 galeria_menu_interno_container'>
             <?php  galeria_menu_interno(); ?>
@@ -26,7 +42,7 @@
     </div>
 
     <div class="row">
-        <?php galeria_trabalhos(); ?>
+        <?php galeria_trabalhos($id_artista); ?>
     </div>
 
 </div>

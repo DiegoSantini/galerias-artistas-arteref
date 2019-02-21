@@ -20,11 +20,6 @@
             <nav class="navbar navbar-expand-lg galeria_nav_menu_interno">
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <!--
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php //echo esc_url( get_page_link( 45161 ) ); ?>">Sobre</a>
-                        </li>
-                        -->
                         
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo $sobre_galeria_url . '&id=1'; ?>">Sobre</a>
@@ -43,7 +38,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $artistas_galeria_url; ?>">Artistas</a>
+                            <a class="nav-link" href="<?php echo $artistas_galeria_url . '&id=1'; ?>">Artistas</a>
                         </li>
 
                         <li>
@@ -51,7 +46,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $obras_galeria_url; ?>">Obras</a>
+                            <a class="nav-link" href="<?php echo $obras_galeria_url . '&id=1'; ?>">Obras</a>
                         </li>
                         
                         <li>
@@ -59,7 +54,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $contato_galeria_url; ?>">Contato</a>
+                            <a class="nav-link" href="<?php echo $contato_galeria_url . '&id=1'; ?>">Contato</a>
                         </li>
                     </ul>
                 </div>

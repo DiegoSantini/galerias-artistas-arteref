@@ -1,14 +1,23 @@
 <?php 
     function galeria_trabalhos($id_Artista){
         $db = new db_galeria_artista_dao();
-        $data_obras = $db->get(
-            'wp_galeria_artista_obras',
-            array(
-                'select' => '*',
-                'campo'  => 'id_artista',
-                'id'     => $id_Artista
-            )
-        );
+        if ($id_Artista == '*') {
+            $data_obras = $db->get(
+                'wp_galeria_artista_obras',
+                array(
+                    'select' => '*'
+                )
+            );
+        }else{
+            $data_obras = $db->get(
+                'wp_galeria_artista_obras',
+                array(
+                    'select' => '*',
+                    'campo'  => 'id_artista',
+                    'id'     => $id_Artista
+                )
+            );
+        }
         $obra_galeria = get_page_by_title('obra_photoarts', ARRAY_A);
         $obra_galeria_url = $obra_galeria['guid'];
         ?>

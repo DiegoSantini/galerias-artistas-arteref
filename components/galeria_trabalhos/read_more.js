@@ -13,4 +13,5 @@ jQuery(document).ready(function($) {
         lessLink: '<div><a href="#">Exibir menos</a></div>',
         blockCSS: 'display: inline-block; width: 100%;'
     });
+    
 });
