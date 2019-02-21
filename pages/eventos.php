@@ -58,10 +58,9 @@
     </div>
 
     <div class="row">
-        <h3>Eventos que já aconteceram</h3>
+        <h4>Eventos que já aconteceram</h4>
         <?php galeria_eventos_lista($data_eventos); ?>
     </div>
-
 </div>
 
 <?php get_footer(); ?> 

@@ -1,3 +1,7 @@
+body, h1, h2, h3, h4, h5, p, span, i, a{
+    font-family: adobe-garamond-pro, serif!important;
+    font-weight: 500!important;
+}
 .galeria_conteudo{
     margin-top: 10px;
     border-bottom: 1px solid #f1f1f1;
@@ -58,6 +62,7 @@
     }
     .galeria_evento_prev, .galeria_evento_next{
         cursor: pointer;
+        text-decoration: none;
         position: absolute;
         top: 50%;
         width: auto;
@@ -129,5 +134,21 @@
     }
     h1{
         margin-top: 0;
+    }
+}
+.galeria_evento_descricao{
+    height: 68px;
+}
+.galeria_evento_container{
+    position: relative;
+    margin-top: 30px;
+    .galeria_evento_descricao_container{
+        position: inherit;
+        margin-top: 80px;
+    }
+    .galeria_outros_eventos{
+        margin-top: 80px;
+        border-top: 1px solid #f1f1f1;
+        border-bottom: 1px solid #f1f1f1;
     }
 }

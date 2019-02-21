@@ -24,7 +24,7 @@ if (isset($_GET['id'])) {
         )
     );
 
-}else{
+}else{  
     $data_galeria = null;
     $data_eventos = null;
 }
@@ -62,16 +62,14 @@ if (isset($_GET['id'])) {
     </div>
 
     <div class="row">
-        <div class='scroll_post_container'>
-            <?php galeria_artistas($data_eventos); ?>
-        </div>
+        <h4>Eventos</h4>  
+        <?php  galeria_eventos_lista($data_eventos); ?>
     </div>
 
     <div class="row">
         <?php galeria_artista_lista(); ?>
     </div>
     <hr>
-    
 </div>
 
 <?php get_footer(); ?> 

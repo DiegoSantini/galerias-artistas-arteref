@@ -51,8 +51,8 @@
                 </div>
                 -->
                 <!-- Next and previous buttons -->
-                <a class="galeria_evento_prev" onclick="plusSlides(-1)"><span class='glyphicon glyphicon-chevron-left'></span></a>
-                <a class="galeria_evento_next" onclick="plusSlides(1)"><span class='glyphicon glyphicon-chevron-right'></span></a>
+                <a class="galeria_evento_prev" onclick="plusSlides(-1)"><span style="font-size: 2.5em;">&#60;</span></a>
+                <a class="galeria_evento_next" onclick="plusSlides(1)"><span style="font-size: 2.5em;">&#62;</span></a>
             </div>
 
         </div>

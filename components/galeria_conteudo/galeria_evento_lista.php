@@ -1,23 +1,51 @@
 <?php 
     function galeria_eventos_lista($data_eventos){
-        //$obra_galeria = get_page_by_title('obra_photoarts', ARRAY_A);
-        //$obra_galeria_url = $obra_galeria['guid'];
+        $evento = get_page_by_title('evento', ARRAY_A);
+        $evento_url = $evento['guid'];
         ?>
+            <!--
             <div class="galeria_trabalhos_grid_image row">
-                <!-- Photo Grid --> 
-                    <?php foreach($data_eventos as $key){ ?>
+
+                    <?php /* foreach($data_eventos as $key){ ?>
                         <div class="column">
-                        <div>
-                            <a href="#<?php //echo $obra_galeria_url . '&id_obra=' . $key['id']; ?>">
-                                <img src="<?php echo $key["url_img_destaque"]; ?>" style="width:100%">
-                                <h5> <?php echo $key["nome_evento"]; ?> </h5>
-                                <p><?php echo $key['local']; ?></p>
-                                <p> <i><?php echo date('d/m/Y', strtotime($key['data_inicio'])) . ' - ' . date('d/m/y', strtotime($key['data_termino'])); ?></i></p>
-                            </a>
+                            <div>
+                                <a href="<?php echo $evento_url . '&id_evento=' . $key['id'] . '&id=1'; ?>">
+                                    <img src="<?php echo $key["url_img_destaque"]; ?>" style="width:100%">
+                                    <h5> <?php echo $key["nome_evento"]; ?> </h5>
+                                    <p><?php echo $key['local']; ?></p>
+                                    <p> <i><?php echo date('d/m/Y', strtotime($key['data_inicio'])) . ' - ' . date('d/m/y', strtotime($key['data_termino'])); ?></i></p>
+                                </a>
+                            </div>
                         </div>
-                        </div>
-                    <?php } ?>
+                    <?php } */?>
             </div>
-        <?php
+            -->
+            <div class='scroll_posts'>
+                <div class='scroll_container'>
+
+                    <div class='scroll_button'>
+                        <button class='scroll_prev'><span style="font-size: 2.5em;">&#60;</span></button>
+                    </div>
+
+                    <div class="scrolling-wrapper">
+                        <?php foreach($data_eventos as $key){ ?>
+                            <a href="<?php echo $evento_url . '&id_evento=' . $key['id'] . '&id=1'; ?>">
+                                <div class="card">
+                                    <img src="<?php echo $key['url_img_destaque']; ?>" alt="">
+                                        <div>
+                                            <?php echo $key['nome_evento']; ?>
+                                                <p><?php echo date('d/m/Y', strtotime($key['data_inicio'])) . ' - ' . date('d/m/y', strtotime($key['data_termino'])); ?></p>
+                                        </div>
+                                </div>
+                            </a>
+                        <?php } ?>
+                    </div>
+                
+                    <div class='scroll_button'>
+                        <button class='scroll_next'><span class='galeria_artista_arrow' style="font-size: 2.5em;">&#62;</span></button>
+                    </div>
+                </div>
+            </div>
+<?php
     }
 ?>
