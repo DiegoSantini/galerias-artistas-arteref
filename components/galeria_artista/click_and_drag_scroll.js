@@ -34,15 +34,12 @@ const slider = document.querySelectorAll('.scrolling-wrapper');
     
     /*
     scroll_posts = document.querySelectorAll('.scroll_posts');
-
     console.log(scroll_posts);
-
     Array.from(scroll_posts).forEach(function(scroll_posts, index){
         console.log(scroll_posts.childNodes);
         console.log(index);
     });
     */
-
     
     const slider_01 = document.querySelector('.scrolling-wrapper');
 
@@ -60,30 +57,22 @@ const slider = document.querySelectorAll('.scrolling-wrapper');
 
     /*
     const slider_02 = document.querySelector('.s-w-2');
-
     const scroll_prev_02 = document.querySelector('.scroll_prev_sw2');
     const scroll_next_02 = document.querySelector('.scroll_next_sw2');
-
     
     scroll_prev_02.addEventListener('click', () => {
         slider_02.scrollLeft = slider_02.scrollLeft - 200;
     });
-
     scroll_next_02.addEventListener('click', () => {
         slider_02.scrollLeft = slider_02.scrollLeft + 200;
     });
-
-
     const slider_03 = document.querySelector('.s-w-3');
-
     const scroll_prev_03 = document.querySelector('.scroll_prev_sw3');
     const scroll_next_03 = document.querySelector('.scroll_next_sw3');
-
     
     scroll_prev_03.addEventListener('click', () => {
         slider_03.scrollLeft = slider_02.scrollLeft - 200;
     });
-
     scroll_next_03.addEventListener('click', () => {
         slider_03.scrollLeft = slider_02.scrollLeft + 200;
     });

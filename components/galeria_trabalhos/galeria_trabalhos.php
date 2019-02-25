@@ -1,14 +1,46 @@
 <?php 
     function galeria_trabalhos($id_Artista){
         $db = new db_galeria_artista_dao();
-        if ($id_Artista == '*') {
+
+        function str_lreplace($search, $replace, $subject){
+            $pos = strrpos($subject, $search);
+            if($pos !== false)
+            {
+                $subject = substr_replace($subject, $replace, $pos, strlen($search));
+            }
+            return $subject;
+        }
+
+        function id_query($lista_id_obra){
+            $query = '';
+            for ($i=0; $i < sizeof($lista_id_obra); $i++) { 
+                $query .= $lista_id_obra[$i];
+                $query .= ' OR id = ';
+            }
+            $result = str_lreplace(' OR id = ', ' ', $query);
+            return $result;
+        }
+
+        if (gettype ( $id_Artista ) === 'array') {
+                id_query($id_Artista);
+                $data_obras = $db->get(
+                    'wp_galeria_artista_obras',
+                    array(
+                        'select' => '*',
+                        'campo'  => 'id', 
+                        'id'     => id_query($id_Artista)
+                    )
+                );
+        }
+        if ($id_Artista === '*') {
             $data_obras = $db->get(
                 'wp_galeria_artista_obras',
                 array(
                     'select' => '*'
                 )
             );
-        }else{
+        }
+        if (gettype ( $id_Artista ) !== 'array' && $id_Artista !== '*') {
             $data_obras = $db->get(
                 'wp_galeria_artista_obras',
                 array(
@@ -18,6 +50,7 @@
                 )
             );
         }
+
         $obra_galeria = get_page_by_title('obra_photoarts', ARRAY_A);
         $obra_galeria_url = $obra_galeria['guid'];
         ?>

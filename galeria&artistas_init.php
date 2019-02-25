@@ -28,6 +28,9 @@ require_once 'controllers/valida_form.php';
 require_once 'controllers/banco_de_dados/data_base.php';
 require_once 'components/galeria_menu_interno/galeria_menu_interno.php';
 require_once 'components/galeria_conteudo/galeria_evento_lista.php';
+require_once 'components/galerias_home/galerias_home.php';
+require_once 'components/galerias_home/galerias_home_estilos.php';
+require_once 'components/galerias_home/galerias_home_arteref.php';
 
 /*
 *
@@ -56,11 +59,12 @@ function galeria_artistas_enqeue_scripts(){
     wp_enqueue_style( 'galeria_artistas_conteudo_style', plugins_url('components/galeria_conteudo/style.css', __FILE__));
     wp_enqueue_style( 'galeria_trabalhos_conteudo_style', plugins_url('components/galeria_trabalhos/style.css', __FILE__));
     wp_enqueue_style( 'galeria_trabalhos_contato_style', plugins_url('components/galeria_contato/style.css', __FILE__));
+    wp_enqueue_style( 'galeria_home_style', plugins_url('components/galerias_home/style.css', __FILE__));
     wp_enqueue_style( 'galeria_obra_style', plugins_url('components/galeria_obra/style.css', __FILE__));
     wp_enqueue_style( 'galeria_menu_interno_style', plugins_url('components/galeria_menu_interno/style.css', __FILE__));
     wp_enqueue_script('galeria_artistas_click_and_drag_scroll', plugins_url('components/galeria_artista/click_and_drag_scroll.js', __FILE__),'jquery', 1.4, true);
     wp_enqueue_script('galeria_artistas_slides_conteudo', plugins_url('components/galeria_conteudo/slides_conteudo.js', __FILE__),'jquery', 1.4, true);
-    wp_enqueue_script('galeria_artistas_readmore', plugins_url('node_modules/readmore-js/readmore.js', __FILE__),'jquery', 1.9, true);
+    wp_enqueue_script('galeria_artistas_readmore', plugins_url('node_modules/readmore-js/readmore.min.js', __FILE__),'jquery', 1.9, true);
     wp_enqueue_script('galeria_artistas_readmore_js', plugins_url('components/galeria_trabalhos/read_more.js', __FILE__),'jquery', 1.9, true);
 
     add_action('wp_head', 'hook_font');
@@ -165,3 +169,15 @@ function galeria_arteref_page_evento(){
     }
 }
 add_action( 'wp', 'galeria_arteref_page_evento');
+
+function galeria_arteref_page_galerias(){
+
+    $page_6 = get_page_by_title('galerias');
+    if( is_page($page_6->ID )){	
+        $dir = plugin_dir_path( __FILE__ );
+        add_action('wp_enqueue_scripts', 'galeria_artistas_enqeue_scripts');
+		include($dir."pages/galerias.php");
+		die();
+    }
+}
+add_action( 'wp', 'galeria_arteref_page_galerias');

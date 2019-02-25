@@ -1,6 +1,5 @@
 <?php
     function galeria_evento_destaque($data_eventos){
-
         $evento_destaque = array_slice($data_eventos, 0, 2);
         ?>
         <div class="col-lg-12 galeria_evento_destaque">

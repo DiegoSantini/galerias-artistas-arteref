@@ -16,16 +16,6 @@ function galeria_menu(){
     <nav class="navbar navbar-expand-lg galeria_nav_menu">
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <!--
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php //echo esc_url( get_page_link( 45161 ) ); ?>">Sobre</a>
-                </li>
-                -->
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $galerias_url; ?>">Mais obras</a>
-                </li>
-                
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $galerias_url; ?>">Galerias</a>
                 </li>
@@ -35,7 +25,7 @@ function galeria_menu(){
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Museus</a>
+                    <a class="nav-link" href="#" unable>Museus</a>
                 </li>
             </ul>
         </div>

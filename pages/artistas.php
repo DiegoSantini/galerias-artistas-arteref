@@ -50,7 +50,7 @@ if (isset($_GET['id'])) {
         
     </div>
 
-    <div class="row">
+    <div class="row galeria_artista_biografia_container">
     <?php foreach ($data_artista as $key) {?>
         <div class="col-lg-12">
             <hr>
