@@ -4,8 +4,7 @@
 
         function str_lreplace($search, $replace, $subject){
             $pos = strrpos($subject, $search);
-            if($pos !== false)
-            {
+            if($pos !== false){
                 $subject = substr_replace($subject, $replace, $pos, strlen($search));
             }
             return $subject;
@@ -22,15 +21,27 @@
         }
 
         if (gettype ( $id_Artista ) === 'array') {
-                id_query($id_Artista);
-                $data_obras = $db->get(
-                    'wp_galeria_artista_obras',
-                    array(
-                        'select' => '*',
-                        'campo'  => 'id', 
-                        'id'     => id_query($id_Artista)
-                    )
-                );
+                if (isset($id_Artista['estilo'])) {
+                    
+                    $data_obras = $db->get(
+                        'wp_galeria_artista_obras',
+                        array(  
+                            'select' => '*',
+                            'campo'  => 'estilo_obra', 
+                            'id'     => '"' . $id_Artista['estilo'] . '"'
+                        )
+                    );
+                }else{
+                    id_query($id_Artista);
+                    $data_obras = $db->get(
+                        'wp_galeria_artista_obras',
+                        array(  
+                            'select' => '*',
+                            'campo'  => 'id', 
+                            'id'     => id_query($id_Artista)
+                        )
+                    );
+                }
         }
         if ($id_Artista === '*') {
             $data_obras = $db->get(
@@ -50,7 +61,7 @@
                 )
             );
         }
-
+        
         $obra_galeria = get_page_by_title('obra_photoarts', ARRAY_A);
         $obra_galeria_url = $obra_galeria['guid'];
         ?>

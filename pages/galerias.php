@@ -1,7 +1,6 @@
 <head>
 <?php 
 get_header(); 
-
     $db = new db_galeria_artista_dao();
     $data_galeria_eventos = $db->get(
         'wp_galeria_eventos',
