@@ -1,5 +1,8 @@
 <?php
-    function galeria_obra_conteudo(){ 
+    function galeria_obra_conteudo(){
+
+    $galeria_contato = get_page_by_title('contato-galeria', ARRAY_A);
+    $galeria_contato_url = $galeria_contato['guid'];
        
     if (isset($_GET['id_obra'])) {
         $id = $_GET['id_obra'];
@@ -60,7 +63,9 @@
                 </div>
 
                 <div>
-                    <p><button>Entrar em contato</button></p>
+                    <a href="<?php echo $galeria_contato_url . '&id=1'; ?>">
+                        <p><button>Entrar em contato</button></p>
+                    </a>
                 </div>
 
                 <br>

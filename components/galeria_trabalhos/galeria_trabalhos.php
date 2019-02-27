@@ -2,24 +2,6 @@
     function galeria_trabalhos($id_Artista){
         $db = new db_galeria_artista_dao();
 
-        function str_lreplace($search, $replace, $subject){
-            $pos = strrpos($subject, $search);
-            if($pos !== false){
-                $subject = substr_replace($subject, $replace, $pos, strlen($search));
-            }
-            return $subject;
-        }
-
-        function id_query($lista_id_obra){
-            $query = '';
-            for ($i=0; $i < sizeof($lista_id_obra); $i++) { 
-                $query .= $lista_id_obra[$i];
-                $query .= ' OR id = ';
-            }
-            $result = str_lreplace(' OR id = ', ' ', $query);
-            return $result;
-        }
-
         if (gettype ( $id_Artista ) === 'array') {
                 if (isset($id_Artista['estilo'])) {
                     
@@ -32,13 +14,13 @@
                         )
                     );
                 }else{
-                    id_query($id_Artista);
+                    $replace_string = new replace_string($id_Artista);
                     $data_obras = $db->get(
                         'wp_galeria_artista_obras',
                         array(  
                             'select' => '*',
                             'campo'  => 'id', 
-                            'id'     => id_query($id_Artista)
+                            'id'     =>  $replace_string->id_query()
                         )
                     );
                 }
@@ -64,19 +46,22 @@
         
         $obra_galeria = get_page_by_title('obra_photoarts', ARRAY_A);
         $obra_galeria_url = $obra_galeria['guid'];
+
+        $galeria_contato = get_page_by_title('contato-galeria', ARRAY_A);
+        $galeria_contato_url = $galeria_contato['guid'];
         ?>
             <div class="galeria_trabalhos_grid_image row">
                 <!-- Photo Grid --> 
                     <?php foreach($data_obras as $key){ ?>
                         <div class="column">
-                        <div>
-                            <a href="<?php echo $obra_galeria_url . '&id_obra=' . $key['id']; ?>">
-                                <img src="<?php echo $key["imagem_url"]; ?>" style="width:100%">
-                                <h5> <?php echo $key["nome_obra"]; ?> </h5>
-                                <p><?php echo $key["acabamento_obra"]; ?></p>
-                                <p><a href="/galeria/contato-galeria/"> Entrar em contato </a></p>
-                            </a>
-                        </div>
+                            <div>
+                                <a href="<?php echo $obra_galeria_url . '&id_obra=' . $key['id']; ?>">
+                                    <img src="<?php echo $key["imagem_url"]; ?>" style="width:100%">
+                                    <h5> <?php echo $key["nome_obra"]; ?> </h5>
+                                    <p><?php echo $key["acabamento_obra"]; ?></p>
+                                    <p><a href="<?php echo $galeria_contato_url . '&id=1'; ?>"> Entrar em contato </a></p>
+                                </a>
+                            </div>
                         </div>
                     <?php } ?>
             </div>

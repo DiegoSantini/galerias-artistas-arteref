@@ -22,6 +22,7 @@ require_once 'components/galeria_contato/google_maps.php';
 require_once 'components/galeria_logo/galeria_logo.php';
 require_once 'components/galeria_artista/galeria_artista_lista.php';
 require_once 'controllers/form.php';
+require_once 'controllers/replace_string.php';
 require_once 'components/galeria_obra/galeria_obra.php';
 require_once 'controllers/banco_de_dados/db.php';
 require_once 'controllers/valida_form.php';

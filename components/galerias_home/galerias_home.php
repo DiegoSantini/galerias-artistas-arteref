@@ -1,5 +1,10 @@
 <?php
     function galerias_home_slide($data){
+        $galeria_evento = get_page_by_title('evento', ARRAY_A);
+        $galeria_evento_url = $galeria_evento['guid'];
+
+        $obra_galeria = get_page_by_title('obra_photoarts', ARRAY_A);
+        $obra_galeria_url = $obra_galeria['guid'];
         ?>
            
         <div class="col-lg-12 galeria_home_slide">
@@ -22,16 +27,27 @@
                                    <p>
                                        <?php echo @$key['descricao_resumida']; echo @$key['descricao_obra'];?>
                                    </p>
-                                   <button> 
-                                   <?php 
-                                        if (isset($key['nome_evento'])) {
-                                            echo 'Detalhes do evento';
-                                        }
-                                        if (isset($key['nome_obra'])) {
-                                            echo 'Ver obra';
-                                        }
-                                   ?>
-                                   </button>
+                                   <a href="
+                                        <?php
+                                            if (isset($key['nome_evento'])) {
+                                                echo $galeria_evento_url . '&id_evento=' . $key['id'] . '&id=1';
+                                            }
+                                            if (isset($key['nome_obra'])) {
+                                                echo $obra_galeria_url . '&id_obra=' . $key['id'];
+                                            }
+                                        ?>
+                                   ">
+                                    <button> 
+                                    <?php 
+                                            if (isset($key['nome_evento'])) {
+                                                echo 'Detalhes do evento';
+                                            }
+                                            if (isset($key['nome_obra'])) {
+                                                echo 'Ver obra';
+                                            }
+                                    ?>
+                                    </button>
+                                   </a>
                                 </div>
                             </div>
                         <?php } ?>
