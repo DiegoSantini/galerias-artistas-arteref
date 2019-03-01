@@ -14,12 +14,6 @@
                 'select' => '*'
             )
         );
-        $estilos = get_page_by_title('estilo', ARRAY_A);
-        $estilos_url = $estilos['guid'];
-
-        $artista = get_page_by_title('artista', ARRAY_A);
-        $artista_url = $artista['guid'];
-
         if (isset($_GET['estilo'])) {
             $res_estilo = $_GET['estilo'];
         }else{
@@ -32,6 +26,7 @@
             <ul>
             <?php
                 foreach ($data_estilos as $key) {
+                   $estilos_url = new link_factory('estilo', array('estilo' => $key['estilo_obra']));
                    ?>
                    <a  
                         class='<?php 
@@ -39,7 +34,7 @@
                                         echo 'galeria_estilo_li_button';
                                     } 
                                ?>'
-                        href="<?php echo $estilos_url . '&estilo=' . $key['estilo_obra']; ?>">
+                        href="<?php echo $estilos_url->create(); ?>">
                         <li>
                             <?php echo $key["estilo_obra"];  ?>
                         </li>
@@ -52,9 +47,10 @@
             <ul>
                 <?php
                 foreach ($data_artista as $key) {
+                $artista_url = new link_factory('artista', array('id' => 1, 'id_artista' => $key['id']));
                 ?>
 
-                <a href="<?php echo $artista_url . '&id=1' . '&id_artista=' . $key['id']; ?>">
+                <a href="<?php echo $artista_url->create(); ?>">
                     <li>
                         <?php echo $key["nome_artista"];?>
                     </li>

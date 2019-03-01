@@ -67,7 +67,7 @@
     img{
         background-color: rgba(226, 226, 226, 0.856);
         width: 100%;
-        height: auto;
+        max-height: 204px;
         transition: all 0.4s;
     }
     img:hover{

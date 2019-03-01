@@ -5,7 +5,7 @@ $rosa : #ec008c;
     padding: 10px;
     margin-right: 0;
     padding-right: 0;
-    display: inline-block;
+    float: right;
     a{
         text-decoration: none;
         color: rgb(66, 66, 66);
@@ -59,4 +59,9 @@ $rosa : #ec008c;
 .galeria_menu_container{
     padding-right: 0;
     padding-left: 0;
+}
+.galeria_artista_nav_img{
+    img{
+        max-width: 48px;
+    }
 }

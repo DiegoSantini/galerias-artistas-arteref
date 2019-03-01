@@ -7,20 +7,18 @@
                 'select' => '*'
             )
         );
-
-        $galeria_artista = get_page_by_title('artista', ARRAY_A);
-        $galeria_artista_url = $galeria_artista['guid'];
-
         ?>
 
         <div class="col-lg-12 galeria_artista_lista">
                 <hr>
                 <h4>Artistas</h4>
 
-                <?php foreach ($db_artista as $key) { ?>
+                <?php foreach ($db_artista as $key) { 
+                $galeria_artista_url = new link_factory('artista', array('id' => 1, 'id_artista' => $key['id']));
+                ?>
                 <div class="col-lg-3">
                     <ul>
-                        <a href=<?php echo $galeria_artista_url . '&id=1&id_artista=' .$key['id']; ?>><li><?php echo $key['nome_artista']  ?></li></a>
+                        <a href=<?php echo $galeria_artista_url->create(); ?>><li><?php echo $key['nome_artista']  ?></li></a>
                     </ul>
                 </div>
 

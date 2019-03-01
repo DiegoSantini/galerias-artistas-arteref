@@ -11,6 +11,11 @@ $rosa : #ec008c;
     margin-right: 0;
     padding-right: 0;
     display: inline-block;
+
+    .galeria_menu_active{
+        color: $rosa;
+    }
+
     a{
         text-decoration: none;
         color: rgb(66, 66, 66);

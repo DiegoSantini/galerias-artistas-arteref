@@ -43,23 +43,20 @@
                 )
             );
         }
-        
-        $obra_galeria = get_page_by_title('obra_photoarts', ARRAY_A);
-        $obra_galeria_url = $obra_galeria['guid'];
-
-        $galeria_contato = get_page_by_title('contato-galeria', ARRAY_A);
-        $galeria_contato_url = $galeria_contato['guid'];
         ?>
             <div class="galeria_trabalhos_grid_image row">
                 <!-- Photo Grid --> 
-                    <?php foreach($data_obras as $key){ ?>
+                    <?php foreach($data_obras as $key){ 
+                        $obra_galeria_url = new link_factory('obra_photoarts', array('id_obra' => $key['id']));
+                        $galeria_contato_url = new link_factory('contato-galeria', array('id' => 1));
+                    ?>
                         <div class="column">
                             <div>
-                                <a href="<?php echo $obra_galeria_url . '&id_obra=' . $key['id']; ?>">
+                                <a href="<?php echo $obra_galeria_url->create(); ?>">
                                     <img src="<?php echo $key["imagem_url"]; ?>" style="width:100%">
                                     <h5> <?php echo $key["nome_obra"]; ?> </h5>
                                     <p><?php echo $key["acabamento_obra"]; ?></p>
-                                    <p><a href="<?php echo $galeria_contato_url . '&id=1'; ?>"> Entrar em contato </a></p>
+                                    <p><a href="<?php echo $galeria_contato_url->create(); ?>"> Entrar em contato </a></p>
                                 </a>
                             </div>
                         </div>

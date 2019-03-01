@@ -85,6 +85,7 @@
                     id mediumint(9) NOT NULL AUTO_INCREMENT,
                     data_cadastro datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
                     estilo_obra varchar(250) NOT NULL,
+                    obra_destaque mediumint(50) NOT NULL,
                     PRIMARY KEY  (id)
                   ) $charset_collate;";
 

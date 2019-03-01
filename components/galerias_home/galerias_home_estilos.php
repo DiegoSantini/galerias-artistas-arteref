@@ -1,69 +1,35 @@
 <?php
     function galerias_home_estilos(){
 
-    $estilo = get_page_by_title('estilo', ARRAY_A);
-    $estilo = $estilo['guid'];
-
+    $db = new db_galeria_artista_dao();
+    $db_estilos= $db->get(
+        'wp_galeria_artista_obras_estilos',
+        array(
+            'select' => '*',
+            'campo' => 'obra_destaque',
+            'id'    => 1
+        )
+    );
         ?>
+        
             <div class="col-lg-12 galerias_home_estilos">
                 <h4>Encontre obras por estilo</h4>
-                <div class="col-lg-3">
-                    <a href="<?php echo $estilo . '&estilo=Pessoas'; ?>">
-                        <button>
-                            Pessoas 
-                        </button>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="<?php echo $estilo . '&estilo=Paisagem'; ?>">
-                    <button>
-                        Paisagem 
-                    </button>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="<?php echo $estilo . '&estilo=Cidades'; ?>">
-                    <button>
-                        Cidades 
-                    </button>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="<?php echo $estilo . '&estilo=Abstrato'; ?>">
-                    <button>
-                        Abstrato 
-                    </button>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="<?php echo $estilo . '&estilo=Natureza'; ?>">
-                    <button>
-                        Natureza 
-                    </button>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="<?php echo $estilo . '&estilo=Folclore'; ?>">
-                    <button>
-                        Folclore 
-                    </button>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="<?php echo $estilo . '&estilo=Surrealismo'; ?>">
-                    <button>
-                        Surrealismo 
-                    </button>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="<?php echo $estilo . '&estilo=Colagem'; ?>">
-                    <button>
-                        Colagem 
-                    </button>
-                    </a>
-                </div>
+                <?php 
+                    foreach ($db_estilos as $key) {
+                       $estilo_url = new link_factory('estilo', array('estilo' => $key['estilo_obra']));
+                       ?>
+                        <div class="col-lg-3">
+                            <a href="<?php echo $estilo_url->create(); ?>">
+                                <button>
+                                    <?php echo $key['estilo_obra']; ?>
+                                </button>
+                            </a>
+                        </div>
+                       <?php
+                    }
+                ?>
             </div>
+
         <?php
     }
 ?>

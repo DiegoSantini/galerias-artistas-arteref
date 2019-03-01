@@ -1,7 +1,5 @@
 <?php 
     function galeria_eventos_lista($data_eventos){
-        $evento = get_page_by_title('evento', ARRAY_A);
-        $evento_url = $evento['guid'];
         ?>
             <div class='scroll_posts'>
                 <div class='scroll_container'>
@@ -9,8 +7,10 @@
                         <button class='scroll_prev'><span style="font-size: 2.5em;">&#60;</span></button>
                     </div>
                     <div class="scrolling-wrapper">
-                        <?php foreach($data_eventos as $key){ ?>
-                            <a href="<?php echo $evento_url . '&id_evento=' . $key['id'] . '&id=1'; ?>">
+                        <?php foreach($data_eventos as $key){ 
+                            $evento_url = new link_factory('evento', array('id' => 1, 'id_evento' => $key['id']));
+                            ?>
+                            <a href="<?php echo $evento_url->create(); ?>">
                                 <div class="card">
                                     <img src="<?php echo $key['url_img_destaque']; ?>" alt="">
                                         <div>

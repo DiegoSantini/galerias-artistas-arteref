@@ -1,19 +1,11 @@
 <?php
-    function galeria_menu_interno(){
-        $sobre_galeria = get_page_by_title('galeria', ARRAY_A);
-        $sobre_galeria_url = $sobre_galeria['guid'];
+    function galeria_menu_interno($page_index = null){
 
-        $eventos_galeria = get_page_by_title('eventos', ARRAY_A);
-        $eventos_galeria_url = $eventos_galeria['guid'];
-
-        $artistas_galeria = get_page_by_title('artistas-galeria', ARRAY_A);
-        $artistas_galeria_url = $artistas_galeria['guid'];
-
-        $obras_galeria = get_page_by_title('trabalhos-galeria', ARRAY_A);
-        $obras_galeria_url = $obras_galeria['guid'];
-
-        $contato_galeria = get_page_by_title('contato-galeria', ARRAY_A);
-        $contato_galeria_url = $contato_galeria['guid'];
+        $sobre_galeria_url = new link_factory('galeria', array('id' => 1));
+        $eventos_galeria_url = new link_factory('eventos', array('id' => 1));
+        $artistas_galeria_url = new link_factory('artistas-galeria', array('id' => 1));
+        $obras_galeria_url = new link_factory('trabalhos-galeria', array('id' => 1));
+        $contato_galeria_url = new link_factory('contato-galeria', array('id' => 1));
 
         ?>
 
@@ -22,7 +14,17 @@
                     <ul class="navbar-nav">
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $sobre_galeria_url . '&id=1'; ?>">Sobre</a>
+                            <a class="nav-link 
+                                <?php
+                                    if (isset($page_index)) {
+                                        if ($page_index === 'galeria') {
+                                            echo 'galeria_menu_active';
+                                        }
+                                    }
+                                ?>
+                            " href="<?php echo $sobre_galeria_url->create(); ?>">
+                                Sobre
+                            </a>
                         </li>
 
                         <li>
@@ -30,7 +32,16 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $eventos_galeria_url  . '&id=1'; ?>">Eventos</a>
+                            <a class="nav-link
+                            
+                            <?php
+                                if (isset($page_index)) {
+                                    if ($page_index === 'eventos') {
+                                        echo 'galeria_menu_active';
+                                    }
+                                }
+                            ?>
+                            " href="<?php echo $eventos_galeria_url->create(); ?>">Eventos</a>
                         </li>
 
                         <li>
@@ -38,7 +49,17 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $artistas_galeria_url . '&id=1'; ?>">Artistas</a>
+                            <a class="nav-link
+                                
+                                <?php
+                                    if (isset($page_index)) {
+                                        if ($page_index === 'artistas') {
+                                            echo 'galeria_menu_active';
+                                        }
+                                    }
+                                ?>
+
+                            " href="<?php echo $artistas_galeria_url->create(); ?>">Artistas</a>
                         </li>
 
                         <li>
@@ -46,7 +67,17 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $obras_galeria_url . '&id=1'; ?>">Obras</a>
+                            <a class="nav-link
+                                    
+                                <?php
+                                    if (isset($page_index)) {
+                                        if ($page_index === 'obras') {
+                                            echo 'galeria_menu_active';
+                                        }
+                                    }
+                                ?>
+
+                            " href="<?php echo $obras_galeria_url->create(); ?>">Obras</a>
                         </li>
                         
                         <li>
@@ -54,7 +85,17 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $contato_galeria_url . '&id=1'; ?>">Contato</a>
+                            <a class="nav-link 
+                                    
+                                <?php
+                                    if (isset($page_index)) {
+                                        if ($page_index === 'contato') {
+                                            echo 'galeria_menu_active';
+                                        }
+                                    }
+                                ?>
+
+                            " href="<?php echo $contato_galeria_url->create(); ?>">Contato</a>
                         </li>
                     </ul>
                 </div>

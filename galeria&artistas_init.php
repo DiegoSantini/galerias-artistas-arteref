@@ -33,6 +33,7 @@ require_once 'components/galerias_home/galerias_home.php';
 require_once 'components/galerias_home/galerias_home_estilos.php';
 require_once 'components/galerias_home/galerias_home_arteref.php';
 require_once 'components/galerias_estilo/galerias_estilo.php';
+require_once 'controllers/link_factory.php';
 
 /*
 *

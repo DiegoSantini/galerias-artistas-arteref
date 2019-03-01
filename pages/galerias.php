@@ -31,21 +31,13 @@ get_header();
 </head>
 
 <div class="container">
-    
+        
     <div class="row">
-
         <div class="col-lg-12 galeria_menu_container">
-            <div class="col-lg-6">
-                <span></span>
-            </div>
-            <div class="cole-lg-6">
-                <div>
-                    <?php galeria_menu(); ?> 
-                </div>
-            </div>
+            <?php galeria_menu(); ?> 
         </div>
-
     </div>
+
 </div>
 
 <div class='container container_home_slide'>
