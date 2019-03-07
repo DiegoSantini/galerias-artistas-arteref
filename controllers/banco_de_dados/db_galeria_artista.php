@@ -1,4 +1,7 @@
 <?php
+if (! defined ( 'ABSPATH' )) {
+	exit ();
+}
     class db_galeria_artista{
 
         function install(){

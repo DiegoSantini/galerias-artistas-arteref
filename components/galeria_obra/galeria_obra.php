@@ -28,6 +28,8 @@
             )
         );
 
+        $estilos = new recupera_nome_estilo_por_id();
+
     }else{
         return;
     }
@@ -47,7 +49,15 @@
                 </div>
                 
                 <div class="galeria_conteudo_estilos">
-                    <p>Estilo: <?php echo $data_galeria_obra[0]['estilo_obra']; ?> </p>
+                    <p>Estilos:
+
+                    <?php 
+                    foreach ($estilos->init($data_galeria_obra[0]['estilo_obra']) as $key) {
+                      echo $key . ' - ';
+                    }
+                    ?> 
+
+                    </p>
                 </div>
 
                 <div>

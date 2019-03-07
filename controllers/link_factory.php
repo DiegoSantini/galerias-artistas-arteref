@@ -5,6 +5,9 @@
 * Recebe o nome da página e os parametros a serem passados pela URL
 *
 */
+if (! defined ( 'ABSPATH' )) {
+	exit ();
+}
     class link_factory{
 
         private $page_name;

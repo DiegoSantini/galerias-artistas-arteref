@@ -2,6 +2,9 @@
 /**
  * Recebe um array com numeros de ids e retorna uma sistaxe SQL para consulta no banco de dados 
  */
+if (! defined ( 'ABSPATH' )) {
+	exit ();
+}
     class replace_string{
       
         private $list;

@@ -4,6 +4,9 @@
 * Valida dados do formulario
 *
 */
+if (! defined ( 'ABSPATH' )) {
+	exit ();
+}
     class valida_form{
 
         public function contato($email, $nome, $texto){

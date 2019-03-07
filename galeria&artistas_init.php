@@ -11,6 +11,7 @@
 if(! defined('ABSPATH') ){
     exit; //Exit if accessed directly
 }
+
 require_once 'controllers/banco_de_dados/db_galeria_artista.php';
 require_once 'components/galeria_menu/galeria_menu.php';
 require_once 'components/galeria_artista/galeria_click_and_drag_slider.php';
@@ -34,6 +35,8 @@ require_once 'components/galerias_home/galerias_home_estilos.php';
 require_once 'components/galerias_home/galerias_home_arteref.php';
 require_once 'components/galerias_estilo/galerias_estilo.php';
 require_once 'controllers/link_factory.php';
+require_once 'controllers/recupera_obra_por_estilo.php';
+require_once 'controllers/recupera_nome_estilo_por_id.php';
 
 /*
 *
@@ -44,6 +47,9 @@ require_once 'controllers/link_factory.php';
 //db_galeria_artista_dao::install();
 date_default_timezone_set('America/Sao_Paulo');
 
+
+$teste = new recupera_nome_estilo_por_id();
+$teste->init('4;11;5');
 /*
 *
 * Renderiza página 

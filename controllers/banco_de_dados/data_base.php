@@ -1,4 +1,7 @@
 <?php
+if (! defined ( 'ABSPATH' )) {
+	exit ();
+}
     class db_galeria_artista_dao{
 
         public function __construct(){}
@@ -114,13 +117,20 @@
 
         public function get($table_name, $params){
             global $wpdb;
+            if (isset($params['not_equal'])) {
+                $query = "SELECT $params[select] FROM $table_name WHERE $params[campo] $params[id]";
+                $data = $wpdb->get_results($query, ARRAY_A );
+                return $data;
+            }
             if (isset($params['id'])) {
                 $query = "SELECT $params[select] FROM $table_name WHERE $params[campo] = $params[id]";
+                $data = $wpdb->get_results($query, ARRAY_A );
+                return $data;
             }else{
                 $query = "SELECT $params[select] FROM $table_name";
+                $data = $wpdb->get_results($query, ARRAY_A );
+                return $data;
             }
-            $data = $wpdb->get_results($query, ARRAY_A );
-            return $data;
         }
 
     }

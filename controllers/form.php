@@ -1,4 +1,7 @@
 <?php 
+if (! defined ( 'ABSPATH' )) {
+	exit ();
+}
     if (isset($_POST['email']) && isset($_POST['nome']) && isset($_POST['mensagem'])) {
 
         /*

@@ -4,7 +4,7 @@
 if (isset($_GET['estilo'])) {
     $id_estilo = array('estilo' => $_GET['estilo']);
 }else{
-    $data_galeria = null;
+    $id_estilo = null;
 }
 ?>
 </head>
@@ -25,6 +25,7 @@ if (isset($_GET['estilo'])) {
             <?php galeria_trabalhos($id_estilo); ?>
         </div>
     </div>
+    
 </div>
 
 <?php get_footer(); ?> 

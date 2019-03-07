@@ -4,15 +4,10 @@
 
         if (gettype ( $id_Artista ) === 'array') {
                 if (isset($id_Artista['estilo'])) {
+
+                    $data = new recupera_obra_por_estilo();
+                    $data_obras = $data->init($id_Artista['estilo']);
                     
-                    $data_obras = $db->get(
-                        'wp_galeria_artista_obras',
-                        array(  
-                            'select' => '*',
-                            'campo'  => 'estilo_obra', 
-                            'id'     => '"' . $id_Artista['estilo'] . '"'
-                        )
-                    );
                 }else{
                     $replace_string = new replace_string($id_Artista);
                     $data_obras = $db->get(
