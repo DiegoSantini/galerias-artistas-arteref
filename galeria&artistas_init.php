@@ -47,9 +47,6 @@ require_once 'controllers/recupera_nome_estilo_por_id.php';
 //db_galeria_artista_dao::install();
 date_default_timezone_set('America/Sao_Paulo');
 
-
-$teste = new recupera_nome_estilo_por_id();
-$teste->init('4;11;5');
 /*
 *
 * Renderiza página 

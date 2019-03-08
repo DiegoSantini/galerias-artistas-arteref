@@ -28,6 +28,7 @@ if (! defined ( 'ABSPATH' )) {
 
         private function set_page_link(){ 
             $link = get_page_by_title($this->page_name, ARRAY_A);
+            var_dump($link);
             $this->link_url = $link['guid'];
         }
 
