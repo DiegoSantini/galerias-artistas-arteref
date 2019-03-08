@@ -73,7 +73,7 @@ function galeria_artistas_enqeue_scripts(){
     wp_enqueue_script('galeria_artistas_slides_conteudo', plugins_url('components/galeria_conteudo/slides_conteudo.js', __FILE__),'jquery', 1.4, true);
     wp_enqueue_script('galeria_artistas_readmore', plugins_url('node_modules/readmore-js/readmore.min.js', __FILE__),'jquery', 1.9, true);
     wp_enqueue_script('galeria_artistas_readmore_js', plugins_url('components/galeria_trabalhos/read_more.js', __FILE__),'jquery', 1.9, true);
-
+    wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
     add_action('wp_head', 'hook_font');
 }
 
