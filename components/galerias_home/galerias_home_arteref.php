@@ -28,7 +28,7 @@
                 <a href="<?php echo $posts[2]->guid; ?>">
                 <?php echo get_the_post_thumbnail( $posts[2]->ID, 'large'); ?>
                 <div class='galerias_home_post_info'>
-                    <h4><?php echo $posts[1]->post_title; ?></h4>
+                    <h4><?php echo $posts[2]->post_title; ?></h4>
                 </div>
                 </a>
             </div>
