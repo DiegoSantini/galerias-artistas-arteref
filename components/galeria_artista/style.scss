@@ -1,4 +1,9 @@
 $cor_principal_custom_content: rgb(0, 0, 0);
+button{
+    &:focus{
+        outline:0;
+    }
+}
 .scrolling-wrapper {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -124,8 +129,9 @@ $cor_principal_custom_content: rgb(0, 0, 0);
         transition: all 400ms ease;
         &:hover{
             color: rgb(58, 58, 58);
+            text-decoration: none;
         }
-        &:active{
+        &:active, &:visited, &:link{
             text-decoration: none;
         }
     }

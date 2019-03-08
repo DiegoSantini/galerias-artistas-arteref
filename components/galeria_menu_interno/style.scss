@@ -23,13 +23,14 @@ $rosa : #ec008c;
         transition-duration: 0.3s;
         transition-timing-function: cubic-bezier(0.25, 0.1, 0.42, 2.04);
         transition-delay: 0s;
-    }
-    a:hover{
-        text-decoration: none;
-        color: $rosa;
-    }
-    a:active, a:visited{
-        text-decoration: none;
+        &:hover{
+            color: $rosa;
+            text-decoration: none;
+        }
+
+        &:active, &:visited, &:link{
+            text-decoration: none;
+        }
     }
     ul{
         list-style-type: none;

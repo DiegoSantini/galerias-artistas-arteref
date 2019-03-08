@@ -48,7 +48,13 @@ const slider = document.querySelectorAll('.scrolling-wrapper');
 
     
     scroll_prev.addEventListener('click', () => {
-        slider_01.scrollLeft = slider_01.scrollLeft - 800;
+        var control = 0;
+        console.log(slider_01.scrollLeft );
+        do {
+            control += 80;
+            slider_01.scrollLeft = slider_01.scrollLeft - control ;
+        } while (control < 800);
+        //slider_01.scrollLeft = slider_01.scrollLeft - 800;
     });
 
     scroll_next.addEventListener('click', () => {

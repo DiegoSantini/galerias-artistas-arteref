@@ -40,7 +40,7 @@ get_header();
 
 </div>
 
-<div class='container container_home_slide'>
+<div class='container_home_slide'>
     <?php galerias_home_slide($data); ?>
 </div>
     
