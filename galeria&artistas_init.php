@@ -77,7 +77,7 @@ function galeria_artistas_enqeue_scripts(){
     add_action('wp_head', 'hook_font');
 }
 
-function galeria_arteref_init(){
+function galeria_arteref_render_pages(){
 
     $page = get_page_by_title('galeria');
     if( is_page($page->ID )){	
@@ -87,12 +87,6 @@ function galeria_arteref_init(){
 		die();
     }
 
-}
-
-add_action( 'wp', 'galeria_arteref_init' );
-
-function galeria_arteref_page_obras(){
-
     $page_2 = get_page_by_title('trabalhos-galeria');
     if( is_page($page_2->ID )){	
         $dir = plugin_dir_path( __FILE__ );
@@ -100,11 +94,6 @@ function galeria_arteref_page_obras(){
 		include($dir."pages/obras.php");
 		die();
     }
-}
-
-add_action( 'wp', 'galeria_arteref_page_obras');
-
-function galeria_arteref_page_artistas(){
 
     $page_3 = get_page_by_title('artistas-galeria');
     if( is_page($page_3->ID )){	
@@ -113,10 +102,6 @@ function galeria_arteref_page_artistas(){
 		include($dir."pages/artistas.php");
 		die();
     }
-}
-add_action( 'wp', 'galeria_arteref_page_artistas');
-
-function galeria_arteref_page_contato(){
 
     $page_4 = get_page_by_title('contato-galeria');
     if( is_page($page_4->ID )){	
@@ -125,10 +110,7 @@ function galeria_arteref_page_contato(){
 		include($dir."pages/contato.php");
 		die();
     }
-}
-add_action( 'wp', 'galeria_arteref_page_contato');
 
-function galeria_arteref_page_obra(){
 
     $page_5 = get_page_by_title('obra_photoarts');
     if( is_page($page_5->ID )){	
@@ -137,11 +119,6 @@ function galeria_arteref_page_obra(){
 		include($dir."pages/obra.php");
 		die();
     }
-}
-add_action( 'wp', 'galeria_arteref_page_obra');
-
-
-function galeria_arteref_page_artista(){
 
     $page_6 = get_page_by_title('artista');
     if( is_page($page_6->ID )){	
@@ -150,10 +127,6 @@ function galeria_arteref_page_artista(){
 		include($dir."pages/artista.php");
 		die();
     }
-}
-add_action( 'wp', 'galeria_arteref_page_artista');
-
-function galeria_arteref_page_eventos(){
 
     $page_7 = get_page_by_title('eventos');
     if( is_page($page_7->ID )){	
@@ -162,10 +135,6 @@ function galeria_arteref_page_eventos(){
 		include($dir."pages/eventos.php");
 		die();
     }
-}
-add_action( 'wp', 'galeria_arteref_page_eventos');
-
-function galeria_arteref_page_evento(){
 
     $page_8 = get_page_by_title('evento');
     if( is_page($page_8->ID )){	
@@ -174,22 +143,14 @@ function galeria_arteref_page_evento(){
 		include($dir."pages/evento.php");
 		die();
     }
-}
-add_action( 'wp', 'galeria_arteref_page_evento');
 
-function galeria_arteref_page_galerias(){
-
-    $page_9 = get_page_by_title('galerias');
+    $page_9 = get_page_by_title('galerias', OBJECT);
     if( is_page($page_9->ID )){	
         $dir = plugin_dir_path( __FILE__ );
         add_action('wp_enqueue_scripts', 'galeria_artistas_enqeue_scripts');
 		include($dir."pages/galerias.php");
 		die();
     }
-}
-add_action( 'wp', 'galeria_arteref_page_galerias');
-
-function galeria_arteref_page_estilo(){
 
     $page_10 = get_page_by_title('estilo');
     if( is_page($page_10->ID )){	
@@ -199,4 +160,4 @@ function galeria_arteref_page_estilo(){
 		die();
     }
 }
-add_action( 'wp', 'galeria_arteref_page_estilo');
+add_action( 'wp', 'galeria_arteref_render_pages');
