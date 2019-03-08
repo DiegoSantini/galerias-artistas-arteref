@@ -111,7 +111,6 @@ function galeria_arteref_render_pages(){
 		die();
     }
 
-
     $page_5 = get_page_by_title('obra_photoarts');
     if( is_page($page_5->ID )){	
         $dir = plugin_dir_path( __FILE__ );

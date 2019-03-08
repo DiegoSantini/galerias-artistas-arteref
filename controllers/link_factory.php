@@ -27,8 +27,9 @@ if (! defined ( 'ABSPATH' )) {
         }
 
         private function set_page_link(){ 
-            $link = get_page_by_title($this->page_name, ARRAY_A);
-            $this->link_url = $link['guid'];
+            $page = get_page_by_title($this->page_name, ARRAY_A);
+            $link = get_permalink($page['ID']);
+            $this->link_url = $link;
         }
 
         private function params_value(){
