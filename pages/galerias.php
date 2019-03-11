@@ -1,8 +1,6 @@
 <head>
 <?php 
 
-require_once 'buscar.php';
-
 get_header(); 
     $db = new db_galeria_artista_dao();
     $data_galeria_eventos = $db->get(
@@ -42,7 +40,7 @@ get_header();
         <!--Criei a barra de busca, porem ela vai para a index do site -->
         <div class="col-md-4 galeria_menu_container">
             <form name="frmBusca" action="buscar.php" method="post">
-                <input type="text" name= $buscar()/>
+                <input type="text" name="pesquisa"/>
                 <input type="submit" value="Buscar"/> 
             </form>
         </div>
