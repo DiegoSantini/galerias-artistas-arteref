@@ -16,7 +16,9 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("galeria_slide");
   var dots = document.getElementsByClassName("galeria_dot");
   var texto = document.getElementsByClassName("ge_texto");
-  if (n > slides.length) {slideIndex = 1} 
+  if (n > slides.length) {slideIndex = 1;
+    setTimeout("slides.length",1000);
+  } 
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none"; 

@@ -1,7 +1,9 @@
 <head>
 <?php get_header(); 
-if (isset($GET['pesquisa'])) {
+if (isset($POST['pesquisa'])) {
     $data_pesquisa = $GET['pesquisa'];
+}else{
+    $data_pesquisa = 'Passe um parametro para pesquisar';
 }
 ?>
 </head>
