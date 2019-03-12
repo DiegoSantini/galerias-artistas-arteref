@@ -1,3 +1,4 @@
+
 const slider = document.querySelectorAll('.scrolling-wrapper');
     let isDown = false;
     let startX;
@@ -32,54 +33,38 @@ const slider = document.querySelectorAll('.scrolling-wrapper');
 
     });
     
-    /*
-    scroll_posts = document.querySelectorAll('.scroll_posts');
-    console.log(scroll_posts);
-    Array.from(scroll_posts).forEach(function(scroll_posts, index){
-        console.log(scroll_posts.childNodes);
-        console.log(index);
-    });
-    */
-    
     const slider_01 = document.querySelector('.scrolling-wrapper');
 
     const scroll_prev = document.querySelector('.scroll_prev');
     const scroll_next = document.querySelector('.scroll_next');
 
-    
+    const galeria_home_card = document.querySelectorAll('.galeria_home_card');
+
+    var walkX = 0;
+
     scroll_prev.addEventListener('click', () => {
-        var control = 0;
-        console.log(slider_01.scrollLeft );
-        do {
-            control += 80;
-            slider_01.scrollLeft = slider_01.scrollLeft - control ;
-        } while (control < 800);
-        //slider_01.scrollLeft = slider_01.scrollLeft - 800;
+
+        if (walkX == 0) {
+            return;
+        }
+
+        walkX = walkX + 100;
+
+        Array.from(galeria_home_card).forEach(function(card){
+            card.style.left = walkX + 'px';
+        });
+
     });
 
     scroll_next.addEventListener('click', () => {
-        slider_01.scrollLeft = slider_01.scrollLeft + 800;
-    });
 
-    /*
-    const slider_02 = document.querySelector('.s-w-2');
-    const scroll_prev_02 = document.querySelector('.scroll_prev_sw2');
-    const scroll_next_02 = document.querySelector('.scroll_next_sw2');
-    
-    scroll_prev_02.addEventListener('click', () => {
-        slider_02.scrollLeft = slider_02.scrollLeft - 200;
+        if (walkX == -330) {
+            return;
+        }
+
+        walkX = walkX - 100;
+        
+        Array.from(galeria_home_card).forEach(function(card){
+            card.style.left = walkX + 'px';
+        });
     });
-    scroll_next_02.addEventListener('click', () => {
-        slider_02.scrollLeft = slider_02.scrollLeft + 200;
-    });
-    const slider_03 = document.querySelector('.s-w-3');
-    const scroll_prev_03 = document.querySelector('.scroll_prev_sw3');
-    const scroll_next_03 = document.querySelector('.scroll_next_sw3');
-    
-    scroll_prev_03.addEventListener('click', () => {
-        slider_03.scrollLeft = slider_02.scrollLeft - 200;
-    });
-    scroll_next_03.addEventListener('click', () => {
-        slider_03.scrollLeft = slider_02.scrollLeft + 200;
-    });
-    */

@@ -2,15 +2,16 @@
     width:100%;
     padding-right: 0px;
     padding-left: 0px;
+
+    .col-lg-12{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
 }
 .galeria_home_slide{
     padding-right: 0;
     padding-left: 0;
-}
-.scrolling-wrapper {
-    .galeria_home_card {
-      display: inline-block;
-    }
 }
 .scrolling-wrapper-flexbox {
     .galeria_home_card {
@@ -18,13 +19,21 @@
       margin-right: 3px;
     }
   }
-.galeria_home_card{
+
+.scrolling-wrapper {
+    .galeria_home_card {
+      display: inline-block;
+    }
+}
+
+.galeria_home_card{ 
     position: relative;
     overflow: hidden;
     width: 550px;
     background: rgb(53, 53, 53);
     color: white;
-    white-space: initial;
+    white-space: initial;      
+    transition: all 400ms ease;     
         div{
             position: absolute;
             width: 100%;
@@ -43,6 +52,8 @@
             color: white;
         }
 }
+
+
 .galeria_home_scroll_posts{
     height: 500px;
     span{
