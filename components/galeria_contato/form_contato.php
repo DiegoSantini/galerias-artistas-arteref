@@ -19,7 +19,7 @@
         ?>
         <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 
-        <form action="form.php" method="post" id="form.php">
+        <form action="<?php $_SERVER['REQUEST_URI']; ?>" method="post" id="form.php">
 
             <div class="form-group">
                 <input type="email" name="email" class="form-control" id="formGroupExampleInput" placeholder="E-mail" required>
@@ -30,7 +30,7 @@
             <div class="form-group">
                 <textarea type="text" name="mensagem" placeholder="Informe a obra pela qual você se interessou" cols="40" rows="10" required></textarea>
             </div>
-            <div class="g-recaptcha" name="recaptcha_google" data-sitekey="6LczN4YUAAAAAJAdzyW8kCXDCCYgrWLFv361GstY"></div>
+            <!--<div class="g-recaptcha" name="recaptcha_google" data-sitekey="6LczN4YUAAAAAJAdzyW8kCXDCCYgrWLFv361GstY"></div>-->
             <br>
             <div class="form-group">
                 <button type="submit" class="btn-arteref-submit">Enviar</button>
