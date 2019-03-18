@@ -3,11 +3,11 @@
         $cards = array_slice($data_eventos, 2, 6);
 ?>
         <div class='scroll_posts'>
-            <h4>Eventos</h4>       
+            <h4>Eventos oi tem alguém ai?</h4>       
             <div class='scroll_container'>
 
                 <div class='scroll_button'>
-                    <button class='scroll_prev'><span>&#60;</span></button>
+                    <button class='scroll_prev_lista'><span>&#60;</span></button>
                 </div>
 
                 <div class="scrolling-wrapper">
@@ -28,7 +28,7 @@
                 </div>
                             
                 <div class='scroll_button'>
-                    <button class='scroll_next'><span class='galeria_artista_arrow'>&#62;</span></button>
+                    <button class='scroll_next_lista'><span class='galeria_artista_arrow'>&#62;</span></button>
                 </div>
 
             </div>
