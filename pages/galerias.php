@@ -36,6 +36,17 @@ get_header();
         <div class="col-lg-12 galeria_menu_container">
             <?php galeria_menu(); ?> 
         </div>
+
+
+         <!--Criei a barra de busca, porem ela vai para a index do site -->
+         <div class="col-md-4 galeria_menu_container">
+            <form name="frmBusca" action="buscar.php" method="post">
+                <input type="text" name="pesquisa"/>
+                <input type="submit" value="Buscar"/> 
+            </form>
+        </div>
+
+
     </div>
 
 </div>

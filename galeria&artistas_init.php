@@ -164,6 +164,14 @@ function galeria_arteref_render_pages(){
 		include($dir."pages/estilo.php");
 		die();
     }
+
+    $page_11 = get_page_by_title('buscar');
+    if( is_page($page_11->ID )){	
+        $dir = plugin_dir_path( __FILE__ );
+        add_action('wp_enqueue_scripts', 'galeria_artistas_enqeue_scripts');
+		include($dir."pages/buscar.php");
+		die();
+    }
 }
 add_action( 'wp', 'galeria_arteref_render_pages');
 
