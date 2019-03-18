@@ -38,14 +38,14 @@ get_header();
         </div>
 
 
-         <!--Criei a barra de busca, porem ela vai para a index do site -->
+         <!--Criei a barra de busca, porem ela vai para a index do site 
          <div class="col-md-4 galeria_menu_container">
             <form name="frmBusca" action="buscar.php" method="post">
                 <input type="text" name="pesquisa"/>
                 <input type="submit" value="Buscar"/> 
             </form>
         </div>
-
+        -->
 
     </div>
 
@@ -73,6 +73,14 @@ get_header();
         <h4>Arteref</h4>
         <?php galerias_home_arteref(); ?>
     </div>
+
+    <!--Criei a barra de busca, porem ela vai para a index do site -->
+    <div class="col-md-4 galeria_menu_container">
+            <form name="frmBusca" action="<?php $_SERVER['REQUEST_URI']; ?>" method="post">
+                <input type="text" name="pesquisa"/>
+                <input type="submit" value="Buscar"/> 
+            </form>
+        </div>
     
 </div>
 

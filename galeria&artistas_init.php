@@ -176,6 +176,7 @@ function galeria_arteref_render_pages(){
 add_action( 'wp', 'galeria_arteref_render_pages');
 
 function galeria_artistas_css_style($hook) {
+    
     wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
     wp_enqueue_style( 'galeria_artista_wp_admin_css', plugins_url('admin-panel/css/admin_style.css', __FILE__) );
     wp_enqueue_script('galeria_artistas_click_and_drag_scroll', plugins_url('admin-panel/js/admin.js', __FILE__),'jquery', 1.5, true);
