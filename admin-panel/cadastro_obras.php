@@ -79,27 +79,36 @@ function cadastro_obras(){
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 
             <div class="col-lg-6">
-                    
-                <form action="#">
+            <?php require_once "handle_form.php"; ?>     
+                <form action="<?php $_SERVER['REQUEST_URI']; ?>" method="post" id="form_obras">
                     <div class="form-group">
-                        <label for="input_nome_galeria">Nome</label>
-                        <input type="text" class="form-control" id="input_nome_galeria">
+                        <label for="input_nome_obras">Nome</label>
+                        <input name="cadastro_obras_nome" type="text" class="form-control" id="input_nome_obras" required>
                     </div>
                     <div class="form-group">
-                        <label for="input_local_galeria">Local</label>
-                        <input type="text" class="form-control" id="input_local_galeria">
+                        <label for="input_artista_obras">Artista</label>
+                        <input name="cadastro_obras_artista" type="text" class="form-control" id="input_artista_obras">
                     </div>
                     <div class="form-group">
-                        <label for="input_descricao_galeria">Descrição</label>
-                        <textarea cols="30" rows="10" class="form-control" id="input_descricao_galeria"></textarea>
+                        <label for="input_descricao_obras">Descrição</label>
+                        <textarea cols="30" rows="10" name= "cadastro_obras_descricao" class="form-control" id="input_descricao_obras" ></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="input_logo_url">Obra img</label>
-                        <input type="text" class="form-control" id="input_logo_url">
+                        <label for="input_obras_url">Obra img</label>
+                        <input type="text" class="form-control" id="input_obras_url">
                     </div>
                     <div class="form-group">
-                        <label for="input_logo_url">Estilo da Obra</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <label for="input_acabamento_obras">Acabamento</label>
+                        <input type="text" name="cadastro_obras_acabamento" class="form-control" id="input_acabamento_obras">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input_preco_obras">Preço</label>
+                        <input type="text" name="cadastro_obras_preco" class="form-control" id="input_preco_obras">
+                    </div>
+                    <div class="form-group">
+                        <label for="input_estilo_obras">Estilo da Obra</label>
+                        <select name="cadastro_obras_estilo" class="form-control" id="exampleFormControlSelect1">
                             <?php
                                 foreach ($data_estilos as $key) {
                                    ?>

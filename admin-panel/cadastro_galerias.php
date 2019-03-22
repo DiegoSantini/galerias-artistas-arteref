@@ -1,3 +1,4 @@
+
 <?php
 if(! defined('ABSPATH') ){
     exit; //Exit if accessed directly
@@ -12,7 +13,14 @@ if(! defined('ABSPATH') ){
                 'select' => "*"
             )
         );
-
+        // if (isset( $_GET['form'])) {
+        //     if ($_GET['form'] == 'true') {
+        //         print '<div class="alert alert-success">Sua mensagem foi enviada com sucesso!</div>';
+        //     }
+        //     if ($_GET['form'] == 'false') {
+        //         print '<div class="alert alert-danger">Algo deu errado por favor tente novamente!</div>';
+        //     }
+        // }
         ?>
         <div class="container arteref_market_place_galerias">
 
@@ -28,7 +36,6 @@ if(! defined('ABSPATH') ){
                             <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Add</a>
                         </li>
                     </ul>
-
                     <div class="tab-content" id="pills-tabContent">
 
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -40,6 +47,7 @@ if(! defined('ABSPATH') ){
                                         <th scope="col">Nome da galeria</th>
                                         <th scope="col">Local</th>
                                         <th scope="col">Descrição</th>
+                                         <!-- <th scope="col">Opções</th>  -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,11 +56,16 @@ if(! defined('ABSPATH') ){
                                 foreach ($data_galerias as $key) {
                                     ?>
                                         <tr scope="row">
-                                            <th><?php echo $key['id']; ?></th>
+                                       
+                                            <th> <a href="admin.php?page=editar_galerias/&id=<?php echo $key['id'];?>"  ><?php echo $key['id']; ?></a></th>
+                                            <!-- <th><?php echo $key['id']; ?></th> -->
                                             <th><?php echo $key['data']; ?></th>
                                             <th><?php echo $key['nome_galeria']; ?></th>
                                             <th><?php echo $key['local']; ?></th>
                                             <th><?php echo $key['descricao_galeria']; ?></th>
+                                            <!-- <th><button type="button" class="btn btn-danger">Excluir</button></th> -->
+                                            <!--<th><?php //echo $key['edit']; ?></th> -->
+                                        
                                         </tr>
                                     <?php
                                 }
@@ -64,19 +77,19 @@ if(! defined('ABSPATH') ){
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 
                             <div class="col-lg-6">
-                                    
-                                <form action="#">
+                                <?php require_once "handle_form.php"; ?>
+                                <form action="<?php $_SERVER['REQUEST_URI']; ?>" method="post" id="form_galeria">
                                     <div class="form-group">
                                         <label for="input_nome_galeria">Nome</label>
-                                        <input type="text" class="form-control" id="input_nome_galeria">
+                                        <input name="cadastro_galeria_nome" type="text" class="form-control" id="input_nome_galeria" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="input_local_galeria">Local</label>
-                                        <input type="text" class="form-control" id="input_local_galeria">
+                                        <input name="cadastro_galeria_local" type="text" class="form-control" id="input_local_galeria" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="input_descricao_galeria">Descrição</label>
-                                        <textarea cols="30" rows="10" class="form-control" id="input_descricao_galeria"></textarea>
+                                        <textarea cols="30" rows="10" name="cadastro_galeria_descricao" class="form-control" id="input_descricao_galeria" required></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="input_logo_url">Logo URL</label>
@@ -84,11 +97,10 @@ if(! defined('ABSPATH') ){
                                     </div>
                                     <button type="submit" class="btn btn-primary">Add</button>
                                 </form>
-
                             </div>
 
                         </div>
-                    
+                        
                     </div>
             </div>
             

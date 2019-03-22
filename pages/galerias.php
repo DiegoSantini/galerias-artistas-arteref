@@ -33,20 +33,22 @@ get_header();
 <div class="container">
         
     <div class="row">
-        <div class="col-lg-12 galeria_menu_container">
-            <?php galeria_menu(); ?> 
+        <div class="col-lg-8 galeria_menu_container">
+            <?php galeria_menu(); ?>                
         </div>
 
+        <div class="col-md-4 galeria_menu_container">
+        <div class="wrap">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-         <!--Criei a barra de busca, porem ela vai para a index do site 
-         <div class="col-md-4 galeria_menu_container">
-            <form name="frmBusca" action="buscar.php" method="post">
-                <input type="text" name="pesquisa"/>
-                <input type="submit" value="Buscar"/> 
-            </form>
-        </div>
-        -->
+			<?php get_search_form(); ?>
 
+		</main><!-- #main -->
+	</div><!-- #primary -->
+        </div><!-- .wrap -->
+        </div> 
+        
     </div>
 
 </div>
@@ -73,14 +75,6 @@ get_header();
         <h4>Arteref</h4>
         <?php galerias_home_arteref(); ?>
     </div>
-
-    <!--Criei a barra de busca, porem ela vai para a index do site -->
-    <div class="col-md-4 galeria_menu_container">
-            <form name="frmBusca" action="<?php $_SERVER['REQUEST_URI']; ?>" method="post">
-                <input type="text" name="pesquisa"/>
-                <input type="submit" value="Buscar"/> 
-            </form>
-        </div>
     
 </div>
 

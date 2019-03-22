@@ -11,7 +11,7 @@
         )
     );
         ?>
-            <div class="col-lg-12 galerias_home_estilos">
+            <div class="col-lg-12 galerias_home_estilos">                        
                 <h4>Encontre obras por estilo</h4>
                 <?php 
                     foreach ($db_estilos as $key) {

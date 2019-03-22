@@ -117,6 +117,7 @@ if (! defined ( 'ABSPATH' )) {
 
         public function get($table_name, $params){
             global $wpdb;
+
             if (isset($params['not_equal'])) {
                 $query = "SELECT $params[select] FROM $table_name WHERE $params[campo] $params[id]";
                 $data = $wpdb->get_results($query, ARRAY_A );
@@ -132,6 +133,16 @@ if (! defined ( 'ABSPATH' )) {
                 return $data;
             }
         }
+
+        public function update($table_name,$data,$where){
+            global $wpdb;
+            $wpdb->update($table_name,$data,$where);
+        }
+
+        // public function delete($table_name,$where){
+        //     global $wpdb;
+        //     $wpdb->delete($table_name,$where);
+        // }
 
     }
 ?>

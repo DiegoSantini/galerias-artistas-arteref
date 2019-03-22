@@ -43,12 +43,24 @@ require_once 'admin-panel/cadastro_obras.php';
 require_once 'admin-panel/cadastro_estilo.php';
 require_once 'admin-panel/cadastro_eventos.php';
 require_once 'admin-panel/mensagens.php';
+require_once 'admin-panel/editar.php';
+
+function galeria_artistas_load_ajax(){
+    echo "teste";
+    exit();
+}
+
+add_action('wp_ajax_galeria_artistas_load_ajax', ' galeria_artistas_load_ajax'); 
+add_action('wp_ajax_nopriv_galeria_artistas_load_ajax', 'galeria_artistas_load_ajax');
+
 
 /*
 *
 *Instala banco de dados com as tabelas do plugin
 *
 */
+
+
 
 //db_galeria_artista_dao::install();
 date_default_timezone_set('America/Sao_Paulo');
@@ -79,8 +91,17 @@ function galeria_artistas_enqeue_scripts(){
     wp_enqueue_script('galeria_artistas_slides_conteudo', plugins_url('components/galeria_conteudo/slides_conteudo.js', __FILE__),'jquery', 1.4, true);
     wp_enqueue_script('galeria_artistas_readmore', plugins_url('node_modules/readmore-js/readmore.min.js', __FILE__),'jquery', 1.9, true);
     wp_enqueue_script('galeria_artistas_readmore_js', plugins_url('components/galeria_trabalhos/read_more.js', __FILE__),'jquery', 1.9, true);
+    wp_enqueue_script('galeria_artistas_buscar_js', plugins_url('components/galerias_home/load_ajax.js', __FILE__),'jquery', 1.9, true);
     wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
     add_action('wp_head', 'hook_font');
+
+
+    wp_localize_script('galeria_artistas_buscar_js', 'load', array(
+        'ajax_url' => admin_url('admin-ajax.php')
+        )
+    );
+
+
 }
 
 function galeria_arteref_render_pages(){
@@ -165,11 +186,11 @@ function galeria_arteref_render_pages(){
 		die();
     }
 
-    $page_11 = get_page_by_title('buscar');
+    $page_11 = get_page_by_title('search');
     if( is_page($page_11->ID )){	
         $dir = plugin_dir_path( __FILE__ );
         add_action('wp_enqueue_scripts', 'galeria_artistas_enqeue_scripts');
-		include($dir."pages/buscar.php");
+		include($dir."pages/search.php");
 		die();
     }
 }
@@ -186,3 +207,4 @@ function galeria_artistas_css_style($hook) {
 
 }
 add_action( 'admin_enqueue_scripts', 'galeria_artistas_css_style' );
+
