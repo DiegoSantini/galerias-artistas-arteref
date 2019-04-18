@@ -39,7 +39,7 @@
             <input type="text" class="form-control" id="input_logo_url" value="<?php echo $data_galeria[0]['logo_url']?>">
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>
-        <!-- <button type="button" class="btn btn-danger">Excluir</button> -->
+        
     </form>
 </div>
 

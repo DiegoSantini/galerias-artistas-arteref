@@ -17,6 +17,9 @@ if(! defined('ABSPATH') ){
         <div class="container arteref_market_place_galerias">
 
             <div class="row">
+                <h2>Mensagens</h2>
+
+                    <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
                             <table class="table table-striped table-hover">
@@ -46,10 +49,9 @@ if(! defined('ABSPATH') ){
                                 ?>
                                 </tbody>
                             </table>
-
-                </div>
+                         </div>
             </div>
-            
+            </div>
         </div>
         <?php
     }
