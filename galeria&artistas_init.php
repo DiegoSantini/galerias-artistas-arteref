@@ -37,13 +37,19 @@ require_once 'components/galerias_estilo/galerias_estilo.php';
 require_once 'controllers/link_factory.php';
 require_once 'controllers/recupera_obra_por_estilo.php';
 require_once 'controllers/recupera_nome_estilo_por_id.php';
+require_once 'controllers/recupera_nome_obra_por_id.php';
+require_once 'controllers/recupera_nome_galeria_por_id.php';
+require_once 'controllers/recupera_nome_artista_por_id.php';
+require_once 'controllers/recupera_imagem_por_id.php';
 require_once 'admin-panel/arteref-marketplace.php';
 require_once 'admin-panel/cadastro_galerias.php';
 require_once 'admin-panel/cadastro_obras.php';
 require_once 'admin-panel/cadastro_estilo.php';
 require_once 'admin-panel/cadastro_eventos.php';
+require_once 'admin-panel/cadastro_artistas.php';
+require_once 'admin-panel/cadastro_imagem.php';
+// require_once 'admin-panel/handle_form.php';
 require_once 'admin-panel/mensagens.php';
-require_once 'admin-panel/editar.php';
 
 function galeria_artistas_load_ajax(){
     echo "teste";
